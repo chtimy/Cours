@@ -1,0 +1,10 @@
+Helio
+Ago
+.class
+.obj
+.o
+*/.vs
+*/Debug
+
+java/Assets
+*.svg
