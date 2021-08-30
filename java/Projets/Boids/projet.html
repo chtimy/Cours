@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>Projet Boids</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../.internal/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <div class="w3-display-container w3-center">
+    <img src="Images/slide.jpg" style="max-width:800px; width:100%; height:60%;" title="https://www.piqsels.com/en/public-domain-photo-zvqbp/download">
+  </div>
+
+   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+    <h1 class="w3-wide">Les Boids : une population en voie de disparition?</h1>
+  </div>
+
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+    <h2 class="w3-opacity"><i>Introduction</i></h2>
+     <div class="w3-panel w3-light-grey">
+      <span style="font-size:150px;line-height:0.6em;opacity:0.2">&#10077;</span>
+      <p class="w3-large w3-justify" style="margin-top:-40px">
+      <i>"Boids est le nom d'un programme informatique de vie artificielle, développé par Craig W. Reynolds en 1986, simulant le comportement d'une nuée d'oiseaux en vol. Le mot *boid* est par ailleurs une contraction de *bird-oid* (qui a la forme d'un oiseau)."</i></p>
+      <p>Source : <a href="https://fr.wikipedia.org/wiki/Boids">https://fr.wikipedia.org/wiki/Boids#cite_note-1</a></p>
+    </div> 
+    <p class="w3-justify w3-large">Le but de ce projet est de créer une simulation de Boids dans un espace 2D dans le langage de programmation Java et la librairie Swing pour la partie graphique. A travers ce projet, nous allons découvrir le langage java sur ces différents aspects comme la notion de classe et d'objets, l'encapsulation des données, l'héritage, le polymorphisme et plein d'autres choses. Nous aurons besoin de plusieurs étapes pour simuler une population de Boids. </p>
+    <p class="w3-justify w3-large">Tout d'abord dans la partie I, nous allons nous concentrer sur un seul Boid avec un comportement unique qui bouge tout seul (le pauvre!) dans un espace 2D fermé. Durant cette partie, on va se familiariser avec la notion de classe et d'objet ainsi qu'un des aspects fondamentaux qui est l'encapsulation des données. On va créer notre première classe et manipuler ses attributs, ses méthodes, etc...</p>
+    <p class="w3-justify w3-large">Durant les autres parties, nous aborderons d'autres étapes comme la mise en œuvre graphique du mouvement du Boid, la simulation d'une foule de Boids et la création d'autres Boids.</p>
+    <p class="w3-justify w3-large">Avant de commencer, voici un exemple sur internet : </p>
+    <iframe width="420" height="315"src="https://www.youtube.com/embed/QbUPfMXXQIY"></iframe>
+  </div>
+
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+    <h2 class="w3-opacity"><i>Analyse et construction d'un Boid</i></h2>
+    <h3 class="w3-opacity"><i>Créer sa première classe</i></h3>
+    <div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue">
+      <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue" style="width:100%"><li>Objets et Classes</li><li>Accesseurs</li><li>Visibilité</li></ul></p>
+    </div> 
+    <p class="w3-justify w3-large">Avant de considérer tout l'aspect graphique du simulateur, nous allons d'abord nous intéresser à certains rouages à mettre en place. Pour commencer, un Boid doit pouvoir se déplacer dans un espace 2D, ce qui signifie que chacun doit avoir une position dans ce même espace. Mais avant de créer une classe pour position, nous avons besoin d'un objet mathématique permettant de décrire des coordonnées 2D. </p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">a</span> Ecrire une classe appelée <code class="w3-codespan">Vector2</code> qui contient deux attributs de type <code class="w3-codespan">float</code> appelés <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code> qui n'ont pas de contraintes particulières sur les valeurs qu'on peut leur assigner.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">b</span> Ecrire un premier constructeur de la classe <code class="w3-codespan">Vector2</code> qui prend deux paramètres <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code> qui sont assignés aux attributs de la classe <code class="w3-codespan">Vector2</code>. </p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">c</span> Ecrire un second constructeur de la classe <code class="w3-codespan">Vector2</code> qui ne prend pas de paramètre en entrée et qui initialise une valeur par défaut à <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code>, soit la valeur <code class="w3-codespan">0f</code>.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">d</span> Ecrire les accesseurs <code class="w3-codespan">setX</code>, <code class="w3-codespan">getX</code>, <code class="w3-codespan">setY</code>, <code class="w3-codespan">getY</code>  </p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">e</span> Dans la fonction main (créer une nouvelle classe contenant la fonction main), créer deux <code class="w3-codespan">Vector2</code> en utilisant les deux constructeurs. Afficher les attributs des deux objets.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">f</span> Toujours dans la fonction main, attribuer de nouvelles valeurs aux coordonnées des deux objets en utilisant leurs accesseurs. </p>
+    <div class="w3-panel w3-yellow w3-card-4">
+      <h3 class="w3-left">Attention!</h3><p class="w3-large"> Il faut utiliser la bonne visibilité.</p>
+    </div> 
+  </div>
+</body>
+</html>
