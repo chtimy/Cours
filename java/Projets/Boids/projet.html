@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
 <title>Projet Boids</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../../../.internal/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../.internal/typora.css">
 <style>
 body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
 </style>
+</head>
 <body>
 
-<!-- Page content -->
+<body>
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
-
   <div class="w3-display-container w3-center">
     <img src="Images/slide.jpg" style="max-width:800px; width:100%; height:60%;" title="https://www.piqsels.com/en/public-domain-photo-zvqbp/download">
   </div>
 
-   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
     <h1 class="w3-wide">Les Boids : une population en voie de disparition?</h1>
   </div>
 
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
     <h2 class="w3-opacity"><i>Introduction</i></h2>
      <div class="w3-panel w3-light-grey">
       <span style="font-size:150px;line-height:0.6em;opacity:0.2">&#10077;</span>
@@ -38,12 +37,12 @@ body {font-family: "Lato", sans-serif}
     <iframe width="420" height="315"src="https://www.youtube.com/embed/QbUPfMXXQIY"></iframe>
   </div>
 
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
     <h2 class="w3-opacity"><i>Analyse et construction d'un Boid</i></h2>
-    <h3 class="w3-opacity"><i>Créer sa première classe</i></h3>
-    <div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue">
-      <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue" style="width:100%"><li>Objets et Classes</li><li>Accesseurs</li><li>Visibilité</li></ul></p>
-    </div> 
+    <h3 class="w3-opacity"><i>Créer sa première classe Vector2</i></h3>
+      <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
+    <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%"><a href="../../../java/Cours/objets_et_classes.html" style="text-decoration: none;"><li class="w3-hover-green">Objets et Classes</li></a><a href="../../../java/Cours/accesseurs.html" style="text-decoration: none;"><li class="w3-hover-green">Accesseurs</li></a><a href="../../../java/Cours/visibilite.html" style="text-decoration: none;"><li class="w3-hover-green">Visibilité</li></a></ul></p>
+  </div> 
     <p class="w3-justify w3-large">Avant de considérer tout l'aspect graphique du simulateur, nous allons d'abord nous intéresser à certains rouages à mettre en place. Pour commencer, un Boid doit pouvoir se déplacer dans un espace 2D, ce qui signifie que chacun doit avoir une position dans ce même espace. Mais avant de créer une classe pour position, nous avons besoin d'un objet mathématique permettant de décrire des coordonnées 2D. </p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">a</span> Ecrire une classe appelée <code class="w3-codespan">Vector2</code> qui contient deux attributs de type <code class="w3-codespan">float</code> appelés <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code> qui n'ont pas de contraintes particulières sur les valeurs qu'on peut leur assigner.</p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">b</span> Ecrire un premier constructeur de la classe <code class="w3-codespan">Vector2</code> qui prend deux paramètres <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code> qui sont assignés aux attributs de la classe <code class="w3-codespan">Vector2</code>. </p>
@@ -54,6 +53,25 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-panel w3-yellow w3-card-4">
       <h3 class="w3-left">Attention!</h3><p class="w3-large"> Il faut utiliser la bonne visibilité.</p>
     </div> 
+
+    <h3 class="w3-opacity"><i>La position et le déplacement d'un boid</i></h3>
+      <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
+    <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%"><a href="../../../java/Cours/afficher_des_objets.html" style="text-decoration: none;"><li class="w3-hover-green">Afficher des objets</li></a></ul></p>
+  </div> 
+    <p class="w3-justify w3-large">Tu viens de créer une nouvelle classe Vector2. Nous allons utiliser cette classe afin d'en créer deux nouvelles : <span class="w3-codespan">Position</span> et <span class="w3-codespan">Displacement</span>. Ces deux classes vont servir plus tard pour définir la position d'un boid dans un espace 2D et son déplacement.      
+    </p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">a</span> Ecrire une classe appelée <code class="w3-codespan">Position</code> qui contient un attribut de type <code class="w3-codespan">Vector2</code> appelé <code class="w3-codespan">coordinates</code> qui n'a pas de contrainte particulière.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">b</span> Ecrire un premier constructeur de la classe <code class="w3-codespan">Position</code> qui prend un paramètre de type <code class="w3-codespan">Vector2</code> et qui est assigné à l'attribut <code class="w3-codespan">coordinates</code>.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">c</span> Ecrire un second constructeur de la classe <code class="w3-codespan">Position</code> qui ne prend pas de paramètre en entrée et qui initialise une valeur par défaut à <code class="w3-codespan">coordinates</code> soit la valeur <code class="w3-codespan">Vector2(0f, 0f)</code>.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">d</span> Ecrire les accesseurs <code class="w3-codespan">setCoordinates</code> et <code class="w3-codespan">getCoordinates</code></p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">e</span> Dans la fonction main, créer deux objets <code class="w3-codespan">Position</code> en utilisant les deux constructeurs que tu viens d'écrire, celui avec deux paramètres et celui sans paramètre.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">f</span> Ecrire la méthode <span class="w3-codespan">ToString()</span> de la classe <span class="w3-codespan">Vector2</span> affichant par exemple : "(x, y)" avec x et y des valeurs. </p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">g</span> Ecrire la méthode <span class="w3-codespan">ToString()</span> de la classe <span class="w3-codespan">Position</span> affichant son attribut <span class="w3-codespan">coordinates</span>.</p>
+    <div class="w3-panel w3-yellow w3-card-4">
+      <h3 class="w3-left">Attention!</h3><p class="w3-large"> Tu peux réutiliser l'appel de <span class="w3-codespan">ToString()</span> de la classe <span class="w3-codespan">Vector2</span>.</p>
+    </div> 
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">h</span> Affiche les deux positions que tu as créees dans la fonction main.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">i</span> De la même façon que pour la classe <span class="w3-codespan">Position</span>, créer une classe <span class="w3-codespan">Displacement</span></p>
   </div>
 </body>
 </html>
