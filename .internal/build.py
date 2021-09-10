@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+from git import Repo
 
 def _get_next_brackets_position(content, index):
     while content[index] != '(' and index < len(content):
@@ -66,7 +67,9 @@ def _load_template(templateName, arguments, targetFilePath):
 def _parse_argument(content):
     values = content.split('=', 1)
     if len(values) != 2:
-        print("Error parsing argument")
+        print("Error parsing argument : " + content)
+    if(values[1].startswith("{") and values[1].endswith("}")):
+        values[1] = values[1][1:len(values[1])-1]
     return {'name':values[0], 'value':values[1]}
 
 def _parse_arguments(content):
@@ -89,7 +92,11 @@ def _parse_arguments(content):
     while i < len(content):
         if content[i] == '(' and not openCloseQuote:
             openCloseBrackets += 1
+        if content[i] == '{' and not openCloseQuote:
+            openCloseBrackets += 1
         if content[i] == ')' and openCloseBrackets > 0 and not openCloseQuote:
+            openCloseBrackets -= 1
+        if content[i] == '}' and not openCloseQuote:
             openCloseBrackets -= 1
         if content[i] == '"' and openCloseBrackets == 0:
             openCloseQuote = not openCloseBrackets
@@ -101,6 +108,7 @@ def _parse_arguments(content):
         i+=1
 
     templateArgs = []
+    print(args)
     for arg in args:
         templateArgs.append(_parse_argument(arg))
     return templateName, templateArgs
@@ -133,11 +141,38 @@ def _resolve_includes(content, filePath):
 
     return applyPlaceHolders(content, placeHolders)
 
+styles={'%div%' : 'class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px"',
+        '%p%'   : 'class="w3-justify w3-large"',
+        '%img%' : 'style="max-width:800px; width:100%; height:60%;"',
+        '%ul%'  : 'class="w3-large" style="text-align: left;"'}
 def _resolve_styles(content):
-    content = content.replace('%div%', 'class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px"')
-    content = content.replace('%p%', 'class="w3-justify w3-large"')
+    for key, value in styles.items():
+        content = content.replace(key, value)
     return content
 
+def _nav_bar(content, filepath):
+    match = re.finditer('<h2.*>(?P<title>.*)</h2>', content)
+    if match:
+        i = 0
+        nav = '\n<div class="w3-sidebar w3-opacity" style="width: 20%; margin-top:20vh">\n'
+        nav = nav + '<a href="%rootpath%/../index.html" class="w3-bar w3-green w3-left-align w3-button w3-mobile">Accueil</a>\n'
+        for m in match:
+            nav = nav + '<a href="#Part'+str(i)+'" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">'+m.group("title")+'</a>\n'
+            i = i + 1
+        nav = nav + '</div>\n'
+        offset = re.search('<div class="w3-content" style="max-width:2000px;margin-top:46px">', content).span()[1]
+        content = content[:offset] + nav + content[offset:]
+        i = 0
+
+    match = re.finditer('<h2.*>(?P<title>.*)</h2>', content)
+    new_content = ""
+    last_offset = 0     
+    for m in match:
+        new_content = new_content + content[last_offset:m.start("title")-1] + ' id="Part' + str(i) + '"'
+        i = i + 1
+        last_offset = m.start("title")-1
+    new_content = new_content + content[last_offset:]
+    return _resolve_paths(new_content, filepath)
 
 def _resolve_file(content, filepath):
 
@@ -151,24 +186,39 @@ def _resolve_file(content, filepath):
 
 def _convertPartialToHtmlPath(path):
     filename = path.name.split('.')[0] + ".html"
-    fileResultPath = path.parent.joinpath(filename)
-    return fileResultPath
+    file_result_path = path.parent.joinpath(filename)
+    return file_result_path
 
 
 def _transform_html_file(path):
     with open(path, 'r') as file_object:
         content = file_object.read()
-        newFileContent = _resolve_file(content, path)
 
-        newPath = _convertPartialToHtmlPath(path)
+        new_file_content = _resolve_file(content, path)
+
+        new_file_content = _nav_bar(new_file_content, path)
+
+        new_path = _convertPartialToHtmlPath(path)
         
-        with open(newPath, 'w') as new_file_object:
-            new_file_object.write(newFileContent)
+        with open(new_path, 'w') as new_file_object:
+            new_file_object.write(new_file_content)
 
-        print(path.name + " => " + newPath.name)    
+        print(path.name + " => " + new_path.name)    
+
+
+  
+repo = Repo("..")
+assert not repo.bare
+git = repo.git
+files = git.diff('--name-only').split('\n')
+untracked_files = repo.untracked_files
+files = files + untracked_files
 
 
 #Get all html files
-for path in Path('..').rglob('projet.partial.html'):
-    _transform_html_file(path)
-    
+for file in filter(lambda f: f.endswith('.partial.html'), files):
+    root_path="../"
+    path=Path(root_path+file)
+    if(path.exists()):
+        _transform_html_file(Path(path))
+      
