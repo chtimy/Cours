@@ -1,11 +1,11 @@
 Helio
 Ago
-.class
-.obj
-.o
+*.class
+*.obj
+*.o
 */.vs
 */Debug
 
 java/Assets
 *.svg
-./lab
+lab
