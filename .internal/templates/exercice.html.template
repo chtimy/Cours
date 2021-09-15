@@ -1,7 +1,7 @@
 <div class="w3-card-2">
-  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+  <div class="w3-container w3-leftbar w3-border-blue w3-pale-blue w3-large w3-serif" style="padding: 1%;">
     <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
-      <img src="%rootpath%/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+      <img src="%rootpath%/Images/exercice.svg" alt="Exercice" class="w3-left" style="vertical-align: middle; width:100%;">
     </div>
     <div class="w3-container w3-cell" style="vertical-align: middle;">
       <p class="w3-large" style="text-align: left;"><i>%content%</i></p>

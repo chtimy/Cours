@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Programmation Orienté Objet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../.internal/w3.css">
+<link rel="stylesheet" href="../../.internal/typora.css">
+<style>
+body {font-family: "Lato", sans-serif}
+</style>
+</head>
+
+<body>
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-sidebar w3-opacity" style="width: 20%; margin-top:20vh">
+<a href="../../.internal/../index.html" class="w3-bar w3-green w3-left-align w3-button w3-mobile">Accueil</a>
+<a href="#Part0" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile"></a>
+<a href="#Part1" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Tout est objet</a>
+<a href="#Part2" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Les langages qui font/sont de la POO</a>
+<a href="#Part3" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Les 3 piliers de la POO</a>
+<a href="#Part4" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Résumé</a>
+</div>
+
+
+<div class="w3-display-container w3-center">
+  <img src="images\title.png" style="max-width:800px; width:100%; height:60%;">
+</div>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+  <h1 class="w3-wide">Introduction à la POO</h1>
+</div>
+
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+  <h2 class="w3-opacity"><i>Introduction</i id="Part0"></h2>
+  <p class="w3-justify w3-large">
+  La POO (Programmation Orientée Objet) ou OOP en anglais (Object-Oriented Programming) est un paradigme de programmation aujourd'hui bien connu et très utilisé. On en trouve dans de nombreux domaines comme l'animation, le  jeux-vidéo, le cinéma, la banque, la sécurité, le web, partout!
+  </p>
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Mais attends, d'abord c'est quoi la programmation et qu'est-ce que çà veut dire orienté objet?</i></p>
+    </div>
+  </div>
+</div> 
+  <p class="w3-justify w3-large">
+  La programmation, c'est effectivement un bien grand mot pour désigner quelqu'un qui va écrire des instructions à une machine pour que cette dernière les exécute. Il existe une grande panoplie de langages permettant de communiquer avec la machine, tous, avec un niveau d'abstraction plus ou moins élevé. 
+  </p>
+  <p class="w3-justify w3-large">Si on veut être proche de la machine, voire parler quasiment le même langage, il y a le langage assembleur. Dans ce cas-là , on demandera à la machine de faire des opérations atomiques comme une addition, une soustraction, stocker une valeur dans un registre (mémoire très rapide d'un processeur), etc... Mais ces langages sont de moins en moins utilisés, car on a beaucoup évolué depuis l'émergence de l'informatique et des langages de programmation à beaucoup plus haut niveau d'abstraction nous permettent de faire des choses bien plus intéressantes en beaucoup moins de temps. Imagines-toi programmer un jeu comme Mario Galaxy en disant à la machine "Alors d'abord additionnes-moi ces deux nombres s'il te plaît, ensuite quand tu auras fini, tu me stockeras le résultat dans ce registre pour faire après une soustraction, etc ...". Et oui! Matrix ça a du style, mais les 0 et 1 c'est pas pour nous.
+  Bon, cela dit en passant, ceux qui programmaient les premiers jeux étaient de ce monde là, ils n'avaient pas le choix, et je leur donne un grand respect.</p>
+  <p class="w3-justify w3-large">Aujourd'hui une multitude de langages (voire même de paradigmes de programmation comme l'orientée objet) existent, on peut citer le langage C, Python, Java, Scratch (exemple ci-dessous), Livecode et j'en passe. 
+  </p>
+  <img src="images\scratch.PNG" style="max-width: 60%;" />
+  <p></p>
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Ok, et pour l'orientée objet, paradigme de programmation, tout çà, veut dire quoi?</i></p>
+    </div>
+  </div>
+</div> 
+  <p class="w3-justify w3-large">
+    Paradigme de programmation est une façon de penser la programmation. Dans ce cours nous verrons la programmation qui copie en quelque sorte le monde réel avec la notion d'objets, mais il en existe d'autres comme le langage fonctionnel, le langage déclaratif, ... J'ai fait une petite fiche à ce propos pour en résumer les plus importants : <a href="%RootPath%/../programmation/paradigmes_programmation.html">Fiche : Paradigmes de programmation</a>.
+  </p>
+  <p class="w3-justify w3-large"> 
+    Orientée objet est un paradigme de programmation qui a émergé dans les années 80. L'idée est de fabriquer ton programme en découpant ton code en petits morceaux de code appelés des objets qui intéragissent entre eux. On va voir que c'est un concept au final très intuitif, et facile à enseigner si on commence par les bonnes ficelles. En plus de cela c'est un paradigme qui est décorrélé de n'importe quel langage, on peut parler, écrire, chanter (tout ce que vous voulez) de la POO sans toucher à un seul langage de programmation. Il paraît même que dans un futur proche on pourra programmer sans écrire une seule ligne de code avec un outil de modélisation très puissant basé sur l'UML (<i>Unified Modeling Language</i>) où on modélise nos objets, leur comportement et leurs interactions avec les autres. Voici un exemple ci-dessous. On reviendra sur ce langage dans une autre fiche de cours, si jamais çà t'intéresse. 
+  </p>
+  <img src="images\uml.png" style="max-width: 100%;" />
+</div>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+  <h2 class="w3-opacity" id="Part1">Tout est objet</h2>
+  <p class="w3-justify w3-large">
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Bon c'est très bien tout çà, mais c'est quoi un objet concrètement?</i></p>
+    </div>
+  </div>
+</div> 
+  <p class="w3-justify w3-large">Patience, on y arrive! Pour expliquer un peu plus en détail ce qu'est un objet, on va prendre l'exemple d'un beau squelette guerrier ci-dessous. Il a l'air de porter beaucoup de choses sur lui qui pourraient facilement être décrits. </p>
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-blue w3-pale-blue w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/exercice.svg" alt="Exercice" class="w3-left" style="vertical-align: middle; width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Et pour la peine, je vais te faire travailler un peu. Peux-tu me faire la liste de tous les objets que tu voies sur l'image du squelette et le "possible" lien qu'ils ont entre eux?</i></p>
+    </div>
+  </div>
+</div> 
+  <img src="images\squeleton.png" alt="squeleton"  style="max-width: 40%;" />
+  <details>
+  <summary class="w3-justify w3-large"><strong>Proposition de correction</strong></summary>
+  <div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
+    <p class="w3-justify w3-large">
+      Sur ce squelette on peut voir comme objet :
+      <ul class="w3-large" style="text-align: left;">
+      <li>un casque</li>
+      <li>des épaulettes</li>
+      <li>une épée</li>
+      <li>un bouclier</li>
+      <li>des bottes</li>
+      <li>un pagne</li>
+      <li>un plastron</li>
+      </ul>
+    </p>
+    <p class="w3-justify w3-large">
+      Mais ce n'est pas tout. Le squelette lui-même est un objet (sans lui faire offense). D'ailleurs on peut tout de suite dire que l'objet squelette est en lien avec tous les équipements précédemment cités puisqu'il les porte. Par contre, on voit bien que l'épée et le bouclier n'ont pas de lien entre eux. Je peux tout à fait enlever l'épée, le bouclier va très bien se porter sans lui et inversement.
+    </p>
+    <p class="w3-justify w3-large">
+      On pourrait aller encore plus loin en décomposant le casque par exemple. Il a un casque composé de deux cornes et de je ne sais combien de petites pics. Il a une épaulette constituée elle aussi de petites pics. Il a un bouclier comportant une poignée, et surement un motif sur le devant. Et pourquoi pas même dire que les bottes sont composées d'un cuir de qualité qu'on pourrait changer en fer ou en tissus en fonction des besoins du joueur. On peut encore aller plus loin et dire que la matière du cuir elle-même contient un alliage de matières premières qui elles-même contiennent des molécules (dont je ne connais pas les noms) et qui elles-même contiennent des atomes! Bon je vais m'arrêter là, de toute façon je n'avais plus d'idée.
+    </p>
+    <p class="w3-justify w3-large">
+       On voit bien que la description peut aller très loin et donc c'est à toi de décider jusqu'où tu veux t'arrêter. Dans un jeu de combat, savoir que les bottes sont en cuir, en fer ou en tissus pour calculer des points de défense est amplement suffisant, on se fiche complètement d'en savoir plus.
+    </p>
+  </div>
+  </details>
+  <p class="w3-justify w3-large">
+    Si tu as fait l'exercice et que tu as lu la solution, tu as donc en tête une liste d'objets que portent le squelette et les relations entre ces objets (par exemple l'objet squelette contient un objet épée). C'est très bien tu viens  de définir par exemple ce que le squelette <span class="w3-xxlarge">est</span>, mais ce n'est qu'une étape, il faut maintenant définir ce que le squelette <span class="w3-xxlarge">fait</span>.
+  </p>
+  <p class="w3-justify w3-large">
+    Le squelette peut effectuer diffférentes actions. Par exemple :
+    <ul class="w3-large" style="text-align: left;">
+      <li>
+        il peut attaquer son adversaire avec son épée
+      </li>
+      <li>
+        il peut se défendre avec son armure,
+      </li>
+      <li>
+        il peut dormir et gagner des points de vie (étrange de dormir pour squelette?)
+      </li>
+    </ul>
+    Essayons d'écrire un morceau de pseudo-code avec l'action "attaquer" :
+  </p>
+  <pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10.25px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Action attaquer :</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>Est-ce que j'ai une épée?</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>Oui : </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Je réalise un coup vers l'avant avec mon épée</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Est-ce qu'un ennemi est à ma portée?</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Oui :</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Je lui enlève 5 points de vie grâce à la qualité de mon épée + 5 points de vie</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>grâce à la caractéristique force du squelette</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Non : </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Affiche "Manqué"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>Non :</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Affiche "Pas d'arme"</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 294px;"></div><div class="CodeMirror-gutters" style="display: none; height: 294px;"></div></div></div></pre>
+  <p class="w3-justify w3-large">
+    Dans ce pseudo-code, on vérifie d'abord si le squelette a un objet de type épée sur lui, ensuite on vérifie si un ennemi est à proximité et enfin on enlève des points de vie à l'adversaire en fonction des caractéristiques de l'épée et des caractéristiques du squelette. Je te donne un petit aperçu de cet algorithme en c++, mais attention il n'est pas complet!
+  </p>
+  <p class="w3-justify w3-large"><strong><u>c++ :</u></strong></p>
+  <div id='write'  class=''>
+    <pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 216.5px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">Squelette::attack</span>(<span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-variable">Enemy</span><span class="cm-operator">&gt;</span> <span class="cm-variable">enemies</span>) </span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// Est-ce que j'ai une épée?</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span>(<span class="cm-variable">_sword</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// je donne un coup vers l'avant avec l'épée avec des effets graphiques</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">attackAnimation</span>();</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp=""></span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text=" ">    </span><span class="cm-tab" role="presentation" cm-text=" ">    </span><span class="cm-comment">// je regarde chacun des ennemies présents</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-keyword">for</span><span class="">(</span><span class="cm-variable">Enemy</span><span class="cm-operator">&amp;</span><span class=""> </span><span class="cm-variable">enemy</span><span class=""> </span><span class="cm-variable">in</span><span class=""> </span><span class="cm-variable">enemies</span><span class="">) </span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp;  {</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class=""><span class="cm-tab" role="presentation" cm-text=" ">    </span> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-comment">// Est-ce qu'un ennemi est à ma portée? &nbsp;  <span class="cm-tab" role="presentation" cm-text=" "> </span> </span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-keyword">if</span><span class="">(</span><span class="cm-variable">_position</span><span class="">.</span><span class="cm-variable">distanceTo</span><span class="">(</span><span class="cm-variable">enemy</span><span class="">.</span><span class="cm-variable">getPosition</span><span class="">()) </span><span class="cm-operator">&lt;</span><span class=""> </span><span class="cm-variable">_range_attack</span><span class="">) </span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-comment">// Je lui enlève 5 points de vie grâce à la qualité de mon épée + 5 points de vie grâce à la caractéristique force du squelette</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-variable">enemy</span><span class="">.</span><span class="cm-variable">hurt</span><span class="">(</span><span class="cm-variable">_sword</span><span class="">.</span><span class="cm-variable">getDamage</span><span class="">() </span><span class="cm-operator">+</span><span class=""> </span><span class="cm-variable">_strength</span><span class="">.</span><span class="cm-variable">convertToDamage</span><span class="">());</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-keyword">else</span><span class=""> </span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-variable">std::cout</span><span class=""> </span><span class="cm-operator">&lt;&lt;</span><span class=""> </span><span class="cm-string">"Missed"</span><span class=""> </span><span class="cm-operator">&lt;&lt;</span><span class=""> </span><span class="cm-variable">std::endl</span><span class="">;</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp;  }</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp;  }</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> </span><span class="">&nbsp; &nbsp;</span><span class="cm-keyword">else</span><span class=""> </span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp;  {</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-variable">std::cout</span><span class=""> </span><span class="cm-operator">&lt;&lt;</span><span class=""> </span><span class="cm-string">"No weapon"</span><span class=""> </span><span class="cm-operator">&lt;&lt;</span><span class=""> </span><span class="cm-variable">std::endl</span><span class="">;</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp;  }</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="">}</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 667px;"></div><div class="CodeMirror-gutters" style="display: none; height: 667px;"></div></div></div></pre><p>&nbsp;</p>
+  </div>
+  <p class="w3-justify w3-large">
+    Si tu ne comprends pas le code, c'est tout à fait normal, c'était pour donner un rapide aperçu de ce à quoi ressemblait le langage c++. J'apporterai des explications à tout çà, donc pas d'inquiétude.
+  </p>
+  <p class="w3-justify w3-large">
+    J'aimerais introduire ici deux mots de vocabulaire importants pour la suite, histoire de les avoir un peu dans le coin de la tête quand je reviendrais dessus. On viens de dire que :
+    <ul class="w3-large" style="text-align: left;">
+      <li>on peut décrire ce que l'objet squelette <strong>est</strong>. On parlera alors d'<strong>attributs</strong> de l'objet squelette. L'objet épée est un attribut de squelette,</li>
+      <li>on peut décrire ce que l'objet squelette <strong>fait</strong>. On parlera alors de <strong>méthodes</strong> de l'objet squelette.</li>
+    </ul>
+  </p>
+  <p class="w3-justify w3-large">
+    On parlera de ces deux notions dans la fiche <a href="objets_et_classes.html">Objets et Classes</a>.
+  </p>
+  <p class="w3-justify w3-large">
+  On vient de faire un petit tour de la notion d'objet de manière conceptuelle. On verra d'autres notions comme les constructeurs, les destructeurs qui permettent de construire et détruire un objet, mais laissons çà de côté pour le moment.
+  </p>
+</div>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+  <h2 class="w3-opacity" id="Part2">Les langages qui font/sont de la POO</h2>
+  <p class="w3-justify w3-large">
+  On peut citer les langages les plus connus qui permettent de faire la POO comme:
+  <ul class="w3-large" style="text-align: left;">
+    <li>java</li>
+    <li>c++</li>
+    <li>c#</li>
+    <li>python</li>
+    <li>php</li>
+    <li>javaScript</li>
+    <li>scala</li>
+    <li>...</li>
+  </ul>
+  Dans ce cours, on ne s'intéressera qu'au c++ qui est conçu pour la POO. Bien qu'on puisse programmer/combiner plusieurs paradigmes de programmation avec ce langage, on verra que dans la majorité du temps on s'en sert pour faire de la programmation orientée objet.
+  </p>
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Ah d'accord, pourquoi apprendre le c++ et pas un autre langage du coup?</i></p>
+    </div>
+  </div>
+</div> 
+  <p class="w3-justify w3-large">
+    Et je te répondrais que pourquoi pas le c++ plutôt qu'un autre langage? Non bien évidemment je vais donner certains arguments qui font que le c++ est un très bon langage. Il faut savoir que le c++ est utilisé très abondamment aujourd'hui, je pense notamment aux moteurs de jeu comme Unreal Engine, qui est à l'origine de nombreux jeux vidéo. On peut aussi citer Blender qui est écrit en grande partie avec du c++ (le reste en c et en python).
+  </p>
+  <p class="w3-justify w3-large">Je vais donner 3 gros atouts qui, je l'espère, vont te convaincre que c++ c'est un langage super cool
+  <ul class="w3-large" style="text-align: left;">
+    <li>
+      C'est un langae qui évolue en permanence de par sa communauté.
+    </li>
+    <li>
+      C'est un langage qui mèle une programmation abstraite (par exemple) tout autant qu'une programmation proche du matériel (gestion mémoire par exemple)
+    </li>
+    <li>
+    </li>
+  </ul>
+  </p>
+</div>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+  <h2  class="w3-opacity" id="Part3">Les 3 piliers de la POO</h2>
+  <p class="w3-justify w3-large">La POO s'appuie sur 3 grands principes :
+  <ul class="w3-large" style="text-align: left;">
+    <li><strong>Encapsulation</strong></li>
+    <li><strong>Héritage</strong></li>
+    <li><strong>Polymorphisme</strong></li>
+  </ul>
+  </p>
+  <p class="w3-justify w3-large">
+    <u>Encapsulation</u> : C'est le fait de cloisonner les attributs d'un objet. Souviens-toi, les attributs sont les objets qui appartiennent à un objet comme par exemple l'épée appartient au squelette. Cloisonner signifie que les attributs d'un objet ne sont modifiables que par l'objet lui-même (le squelette peut casser son épée lui-même), et aucun autre objet peuvent venir les modifier (un ennemi ne peut pas venir remplacer l'épée du squelette par un frite en mousse). La responsabilité est entièrement donnée à l'objet afin qu'il gère ses propres attributs. On verra pourquoi dans la fiche <a href="encapsulation.html">Encapsulation</a>. 
+  </p>
+  <img src="Images\encapsulation.png" alt="encapsulation" style="width:60%;" />
+  <p class="w3-justify w3-large"><u>Héritage</u> : Si une souris est un animal et qu'un éléphant est un animal, alors une souris est un éléphant? Hmm pas tout à fait mais on a quelque chose! Un éléphant n'est pas une souris et inversement, par contre les deux ont bien çà en commun, c'est que ce sont des animaux. On sait qu'un animal doit manger et dormir pour continuer à vivre, on sait aussi qu'un animal a un poids et une taille. Par contre, un éléphant a des défenses, ce que n'a pas la souris, inversement, la souris à des moustaches que n'a pas l'éléphant. En POO, on est tout a fait capable de modéliser une telle situation en créant un type d'objet "Animal" et deux autres types d'objet "Elephant" et "Souris" qui vont hériter des attributs et actions du type d'objet "Animal". Le shéma ci-dessous illustre l'exemple.
+  <div class="w3-panel w3-pale-yellow w3-leftbar w3-border-yellow w3-justify">
+  <p>Notes : Au passage on montre avec ce schéma un aperçu de ce qu'est un shéma UML.</p>
+</div> 
+  </p>
+  <img src="Images\moyen_locomotion.png" alt="moyen_locomotion" style="width:50%;" />
+  <p></p>
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Hey! Tu viens de dire que manger() et boire() était commun aux deux et que c'était dand l'objet Animal. Pourquoi ces actions se trouvent dans tous les objets ? Ouah je comprend plus!</i></p>
+    </div>
+  </div>
+</div> 
+  <p class="w3-justify w3-large">Oui, bien sûr, c'est normal. Tu mets le point sur un autre grand concept qui est le polymorphisme. Et comme par hasard, c'est le point suivant!
+  </p>
+  <p class="w3-justify w3-large"><u>Polymorphisme</u> : Intuitivement, et j'espère que tu es d'accord, un éléphant ne mange pas de la même façon qu'une souris que ce soit en quantité qu'en variété de nourriture. Donc les deux peuvent faire la même action "manger()", mais le déroulement de l'action "manger()" sera différent pour les deux animaux souris et éléphant. L'idée est donc d'écrire un morceau de code différent de l'action manger pour la souris et pour l'élephant. Maintenant, imaginons que nous souhaitons donner à manger à l'ensemble des animaux d'un parc naturel.
+  </p>
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Mais attends, donner à manger aux souris dans un parc na...</i></p>
+    </div>
+  </div>
+</div> 
+  <p class="w3-justify w3-large">Chuuuut, imagines, imagines! Fais un effort. </p>
+  <p class="w3-justify w3-large">On ne veut pas s'embêter à savoir à quel est le type d'animal on a à faire, on veut simplement qu'il mange comme tous les autres. On pourrait donc gérer une collection d'animaux et appeler l'action "manger()" pour chaque animal. 
+  </p>
+  <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-yellow w3-sand w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 13%;">
+      <img src="../../.internal/Images/guy.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle;">
+      <p class="w3-large" style="text-align: left;"><i>Et du coup, comment on sait que c'est l'action manger de éléphant ou souris qui est réalisée?</i></p>
+    </div>
+  </div>
+</div> 
+  <p class="w3-justify w3-large">
+  Et bien, c'est tout simplement le programme qui décidera au moment de l'exécution si l'objet de type Animal est plus spécifiquement un éléphant ou une souris et appeler l'action manger de l'un ou l'autre en conséquence. Voilà un shéma un peu plus visuel ci-dessous.
+  </p>
+  <img src="Images\POLYMORPHISME.png" alt="POLYMORPHISME" style="width: 100%;" />
+  <p class="w3-justify w3-large">Evidemment, en si peu de lignes ces 3 concepts peuvent paraître encore obscur, mais ils font l'objet d'une fiche de cours chacun, et je donnerai plein d'exemples pour être sûr que tu saisisses tout.
+  </p>
+</div>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+  <img style="max-width:800px; width:100%; height:60%;" src="../../.internal/Images/congrat.svg" alt="Félicitation!!"/>
+  <h2 class="w3-opacity" id="Part4">Résumé</h2>
+  <p class="w3-justify w3-large">
+    <ul class="w3-large" style="text-align: left;">
+      <li>La programmation est le fait d'écriture des instructions à la machine pour qu'elle les exécute</li>
+      <li>La POO est un paradigme de programmation où tout est considéré comme objet</li>
+      <li>Chaque objet peut contenir d'autres objets, mais aussi des actions. On verra que ces termes ne sont pas tout à fait ceux empruntés à la POO, mais qu'on utilisera les termes attributs et méthodes.</li>
+      <li>c++ est un langage OO (orienté objet), l'écriture de code se base sur des types d'objet</li>
+      <li>Les trois principaux principes de la POO sont l'encapsulation, l'héritage et le polymorphisme</li>
+    </ul>
+  </p>
+</div>
+</div>
+</body>
+</html>

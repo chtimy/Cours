@@ -1,154 +1,9 @@
 from pathlib import Path
 import re
 from git import Repo
-
-def _get_next_brackets_position(content, index):
-    while content[index] != '(' and index < len(content):
-        index+=1
-
-    if index == len(content):
-        return -1, -1
-
-    index+=1
-    begin = index
-    openClose=1
-    for x in range(begin, len(content)):
-        if content[x] == '(':
-            openClose+=1
-        if content[x] == ')':
-            openClose-=1
-        if openClose == 0:
-            index = x
-            break
-    return begin, index
-
-def _parse_includes(content):
-    index = 0
-    includes = []
-    while index < len(content):
-        local_index = content[index:].find("_include")
-        if local_index >= 0 :
-            begin, end = _get_next_brackets_position(content, index+local_index)
-            if begin+1==end:
-                print("Error, brackets are empty")
-            includes.append({'begin':index+local_index, 'end':end+1, 'content':content[begin:end]})
-            index = end+1
-        else:
-            break
-    return includes
-
-def _resolve_paths(data, targetFilePath):
-    path = str(targetFilePath.parent)
-    deep = len(path.split('\\')) - 1
-    newPath = ""
-    for x in range(deep):
-        newPath += "../"
-    internalPath = newPath+".internal"
-    data = data.replace("%rootpath%", internalPath)
-    javaCoursPath = newPath+"java/Cours"
-    data = data.replace("%java_cours%", javaCoursPath)
-    return data
-
-def _resolve_arguments(content, arguments):
-    for argument in arguments:
-        name = argument['name']
-        value = argument['value']
-        content = content.replace("%"+name+"%", value)
-    return content
-
-def _load_template(templateName, arguments, targetFilePath):
-    templatePath = "./templates/"+templateName+".html.template"
-    with open(templatePath, 'r') as file_object:
-        filedata = file_object.read()
-        filedata = _resolve_arguments(filedata, arguments) 
-        filedata = _resolve_file(filedata, targetFilePath)
-        return filedata
-
-def _parse_argument(content):
-    values = content.split('=', 1)
-    if len(values) != 2:
-        print("Error parsing argument : " + content)
-    if(values[1].startswith("{") and values[1].endswith("}")):
-        values[1] = values[1][1:len(values[1])-1]
-    return {'name':values[0], 'value':values[1]}
-
-def _parse_arguments(content):
-    i = 0
-    index = -1
-    templateName = ""
-    while i < len(content):
-        if content[i] == ',':
-            templateName = content[0:i]
-            i+=1
-            break
-        i+=1
-    if templateName == "":
-        print("Error parsing include arguments")
-
-    openCloseBrackets = 0
-    openCloseQuote = False
-    index = i
-    args=[]
-    while i < len(content):
-        if content[i] == '(' and not openCloseQuote:
-            openCloseBrackets += 1
-        if content[i] == '{' and not openCloseQuote:
-            openCloseBrackets += 1
-        if content[i] == ')' and openCloseBrackets > 0 and not openCloseQuote:
-            openCloseBrackets -= 1
-        if content[i] == '}' and not openCloseQuote:
-            openCloseBrackets -= 1
-        if content[i] == '"' and openCloseBrackets == 0:
-            openCloseQuote = not openCloseBrackets
-        if content[i] == ',' and openCloseBrackets == 0 and not openCloseQuote:
-            args.append(content[index:i])
-            index = i+1
-        if i+1 == len(content):
-            args.append(content[index:i+1])
-        i+=1
-
-    templateArgs = []
-    print(args)
-    for arg in args:
-        templateArgs.append(_parse_argument(arg))
-    return templateName, templateArgs
-        
-def _parse_include(include):
-    template_name, arguments = _parse_arguments(include)
-    return {'templateName' : template_name, 'templateArgs' : arguments}
-
-def applyPlaceHolders(content, placeHolders):
-    newContent = ""
-    cursor = 0
-    for placeHolder in placeHolders:
-        newContent+=content[cursor:placeHolder['begin']] + placeHolder['content']
-        cursor = placeHolder['end']
-    newContent+=content[cursor:len(content)]
-    return newContent
-
-def _resolve_includes(content, filePath):     
-    includeOccurences = _parse_includes(content)
-    placeHolders = []
-
-    for includeOccurence in includeOccurences:
-        includeArguments = _parse_include(includeOccurence['content'])
-        template = _load_template(includeArguments['templateName'], includeArguments['templateArgs'], filePath)
-        placeHolders.append({
-            'begin' : includeOccurence['begin'],
-            'end' : includeOccurence['end'],
-            'content' : template
-        })
-
-    return applyPlaceHolders(content, placeHolders)
-
-styles={'%div%' : 'class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px"',
-        '%p%'   : 'class="w3-justify w3-large"',
-        '%img%' : 'style="max-width:800px; width:100%; height:60%;"',
-        '%ul%'  : 'class="w3-large" style="text-align: left;"'}
-def _resolve_styles(content):
-    for key, value in styles.items():
-        content = content.replace(key, value)
-    return content
+from include_resolver import resolve_includes
+from style_resolver import resolve_styles 
+from path_resolver import resolve_paths 
 
 def _nav_bar(content, filepath):
     match = re.finditer('<h2.*>(?P<title>.*)</h2>', content)
@@ -172,15 +27,15 @@ def _nav_bar(content, filepath):
         i = i + 1
         last_offset = m.start("title")-1
     new_content = new_content + content[last_offset:]
-    return _resolve_paths(new_content, filepath)
+    return resolve_paths(new_content, filepath)
 
 def _resolve_file(content, filepath):
 
-    content = _resolve_includes(content, filepath)
+    content = resolve_includes(content, filepath)
 
-    content = _resolve_styles(content)
+    content = resolve_styles(content)
 
-    content = _resolve_paths(content, filepath)
+    content = resolve_paths(content, filepath)
     
     return content
 

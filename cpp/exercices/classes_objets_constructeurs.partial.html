@@ -1,0 +1,46 @@
+_include(header,mytitle={Classes, objets et constructeurs})
+
+
+  <div class="w3-display-container w3-center">
+    <img src="%rootpath%/Images/exercice.svg" style="max-width:800px; width:100%; height:60%;" >
+  </div>
+
+<div %div%>
+  <h1 class="w3-wide">Classes, objets et constructeurs</h1>
+</div>
+
+  <div %div%>
+    <h2 class="w3-opacity"><i>Création d'une Fleur</i></h2>
+    _include(fiche_requise,elements=_include(fiche_requise_item,address=%cpp_cours%/objets_et_classes.html,label=Objets et Classes))
+    <p %p%>
+      <span class="w3-badge w3-green">a</span> Ecrire une classe appelée <span class="w3-codespan">Fleur</span> qui a une taille, un poids et un identifiant et un nombre de pétales qui ont respectivement comme type <span class="w3-codespan">float</span>, <span class="w3-codespan">float</span>, <span class="w3-codespan">string</span> et <span class="w3-codespan">int</span>.
+    </p>
+    _include(attention,content={Ne pas oublier de mettre le mot clé public au début de la classe pour éviter d'avoir de mauvaises surprises.})
+    <p %p%>
+      <span class="w3-badge w3-green">b</span> Dans cette même classe, écrire un constructeur qui permet d'initialiser tous les attributs.
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">c</span> Ecrire une fonction <span class="w3-codespan">main</span> (le point d'entrée du programme) en dessous de la classe et créer un nouvel objet <span class="w3-codespan">Feuille</span>. Un exemple:
+      <div id='write'  class=''><pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.5px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span><span class=""> </span><span class="cm-def">main</span><span class="">()</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="">{</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp;</span><span class="cm-comment">// content</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp;</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp;</span><span class="cm-keyword">return</span><span class=""> </span><span class="cm-number">0</span><span class="">;</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="">}</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 138px;"></div><div class="CodeMirror-gutters" style="display: none; height: 138px;"></div></div></div></pre></div>
+    </p> 
+    <p %p%>
+      <span class="w3-badge w3-green">d</span> Créer une méthode appelée <i>afficher</i> qui ne prend pas de paramètres en entrée et ne retourne pas de valeur. Dans cette méthode, afficher l'ensemble des attributs de l'objet avec la fonction <span class="w3-codespan">std::cout</span>, en n'oubliant pas d'inclure la librairie : <span class="w3-codespan">#include &lt;iostream&gt;</span>.
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">e</span> Créer une méthode appelée <i>perdUnePetale</i> qui ne prend aucun paramètre d'entrée, qui ne retourne aucune valeur et qui fait perdre une pétale à la fleur. Attention à ne pas avoir un nombre négatif! Appeler cette méthode dans la fonction <i>main</i> et afficher le nombre de pétales restants.
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">f</span> Créer une méthode appelée <i>estAdulte</i> qui prend aucun paramètre d'entrée, qui retourne vrai si la fleur a au moins 3 pétales et une taille d'au moins 10 cm, faux sinon. Appeler cette méthode dans la fonction <i>main</i>.
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">g</span> Créer une méthode appelée <i>pousse</i> qui prend en entrée un paramètre correspondant à la hauteur que l'on souhaite ajouter à la fleur. Attention à ne pas avoir un nombre négatif. Appeler cette méthode dans la fonction <i>main</i>.
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">h</span> Si je souhaite créer une fleur avec des valeurs "aberrantes", rien ne m'en empêche. Je peux par exemple donner -6 pétales. Comment pourrait-on changer le code pour éviter des valeurs aberrantes pour chaque attribut? Implémenter la solution.
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">f</span> Question plus ouverte : Dans la fonction main, il est tout à fait possible que je fasse <span class="w3-codespan">maFleur.poids = -5.6</span>. A moins de vouloir des choses un peu bizarre, ce n'est pas vraiment quelque chose que l'on veut autoriser. Y aurait t-il un moyen d'empêcher une personne qui utilise la classe <span class="w3-codespan">Fleur</span> de faire une telle chose? Indice : la visibilité public/private.
+    </p>
+  </div>
+</body>
+</html>
