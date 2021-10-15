@@ -1,3 +1,11 @@
-<div class="w3-panel w3-yellow w3-card-4">
-      <h3 class="w3-left">Attention!</h3><p class="w3-large">%content%</p>
+<div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-red w3-pale-red w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align:middle; width: 13%;">
+      <img src="%rootpath%/Images/notify.svg" alt="Attention" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align:middle; text-align:justify">
+      <p class="w3-large" style="text-align:left;"><i>%content%</i></p>
+    </div>
+  </div>
 </div>
+<p></p>

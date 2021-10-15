@@ -1,3 +1,6 @@
 - faire un programme pour détecter les liens morts
 - rendre plus robuste le parser des includes
 - faire le check des liens morts
+
+- c++ 
+	- Module interface init	

@@ -12,4 +12,4 @@ body {font-family: "Lato", sans-serif}
 </head>
 
 <body>
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-content" style="max-width:2000px;margin-top:0px">

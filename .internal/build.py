@@ -15,7 +15,7 @@ def _nav_bar(content, filepath):
             nav = nav + '<a href="#Part'+str(i)+'" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">'+m.group("title")+'</a>\n'
             i = i + 1
         nav = nav + '</div>\n'
-        offset = re.search('<div class="w3-content" style="max-width:2000px;margin-top:46px">', content).span()[1]
+        offset = re.search('<div class="w3-content" style="max-width:2000px;margin-top:0px">', content).span()[1]
         content = content[:offset] + nav + content[offset:]
         i = 0
 

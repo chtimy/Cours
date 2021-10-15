@@ -1,0 +1,6 @@
+<div %div%>
+<img %img% src="%rootpath%/Images/congrat.svg" alt="Félicitation!!"/>
+</div>
+<div class="w3-teal">
+	%content%
+</div>

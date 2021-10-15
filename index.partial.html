@@ -1,12 +1,12 @@
 _include(header,mytitle={Accueil})
 <div class="w3-display-container w3-center">
-  <img src="%rootpath%/images/main.svg" style="max-width:600px; width:auto; height:60%;" title="Photo de Dominika Roseclay provenant de Pexels">
+  <img src="%rootpath%/images/home.svg" style="max-width:600px; width:auto; height:60%;" title="Photo de Dominika Roseclay provenant de Pexels">
 </div>
 <div %div%>
   <h1 class="w3-opacity">Accueil</h1>
 </div>
 <div %div%>
-  <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
+  <div class="w3-content w3-panel" style="width:100%">
     <p><img src=".internal/Images/git.png" style="width: 20%;" />
       <h2 class="w3-opacity">Cours</h2>
       <ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%">
@@ -18,13 +18,14 @@ _include(header,mytitle={Accueil})
   </div>
 </div>
 <div %div%>
-  <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
+  <div class="w3-content w3-panel" style="width:100%">
     <p>
     <img src=".internal/Images/cpp.png" style="width: 9%" />
     <h2 class="w3-opacity">Cours</h2>
       <ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%">
         _include(fiche_requise_item,address=%cpp_cours%/POO.html,label=Programmation Orientée Objet)  
         _include(fiche_requise_item,address=%cpp_cours%/objets_et_classes.html,label=Objets et Classes)  
+        _include(fiche_requise_item,address=%cpp_cours%/visibilite_encapsulation.html,label=Visibilité et encapsulation)  
       </ul>
     </p>
     <h2 class="w3-opacity">Exercices</h2>
