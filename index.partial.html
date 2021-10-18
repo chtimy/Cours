@@ -5,36 +5,41 @@ _include(header,mytitle={Accueil})
 <div %div%>
   <h1 class="w3-opacity">Accueil</h1>
 </div>
-<div %div%>
-  <div class="w3-content w3-panel" style="width:100%">
-    <p><img src=".internal/Images/git.png" style="width: 20%;" />
-      <h2 class="w3-opacity">Cours</h2>
-      <ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%">
-        _include(fiche_requise_item,address=./git/premiers_pas.html,label=Premiers pas avec Git)  
-        _include(fiche_requise_item,address=./git/commandes_shell_resume.html,label=Résumé des commandes Shell)  
-        _include(fiche_requise_item,address=./git/commandes_git_resume.html,label=Résumé des commandes Git)  
-      </ul>
-    </p>
+<div style="background-color: #ffd99b;">
+  <div %div%>
+    <div class="w3-content w3-panel" style="width:100%">
+      <p><img src=".internal/Images/git.png" style="width: 20%;" />
+        <h2 class="w3-opacity">Cours</h2>
+        <ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%">
+          _include(fiche_requise_item,address=./git/premiers_pas.html,label=Premiers pas avec Git)  
+          _include(fiche_requise_item,address=./git/commandes_shell_resume.html,label=Résumé des commandes Shell)  
+          _include(fiche_requise_item,address=./git/commandes_git_resume.html,label=Résumé des commandes Git)  
+        </ul>
+      </p>
+    </div>
   </div>
 </div>
-<div %div%>
-  <div class="w3-content w3-panel" style="width:100%">
-    <p>
-    <img src=".internal/Images/cpp.png" style="width: 9%" />
-    <h2 class="w3-opacity">Cours</h2>
+<div style="background-color: #9bc1ff;">
+  <div %div%>
+    <div class="w3-content w3-panel" style="width:100%">
+      <p>
+      <img src=".internal/Images/cpp.png" style="width: 9%" />
+      <h2 class="w3-opacity">Cours</h2>
+        <ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%">
+          _include(fiche_requise_item,address=%cpp_cours%/POO.html,label=Programmation Orientée Objet)  
+          _include(fiche_requise_item,address=%cpp_cours%/objets_et_classes.html,label=Objets et Classes)  
+          _include(fiche_requise_item,address=%cpp_cours%/visibilite_encapsulation.html,label=Visibilité et encapsulation)  
+        </ul>
+      </p>
+      <h2 class="w3-opacity">Exercices</h2>
+      <p>
       <ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%">
-        _include(fiche_requise_item,address=%cpp_cours%/POO.html,label=Programmation Orientée Objet)  
-        _include(fiche_requise_item,address=%cpp_cours%/objets_et_classes.html,label=Objets et Classes)  
-        _include(fiche_requise_item,address=%cpp_cours%/visibilite_encapsulation.html,label=Visibilité et encapsulation)  
+        _include(fiche_requise_item,address=%cpp_exercices%/classes_objets_constructeurs.html,label={Classes, objets et contructeurs})  
+        _include(fiche_requise_item,address=%cpp_exercices%/coffee_shop.html,label={Coffee shop})  
       </ul>
     </p>
-    <h2 class="w3-opacity">Exercices</h2>
-    <p>
-    <ul class="w3-ul w3-card-4 w3-red w3-hoverable" style="width:100%">
-      _include(fiche_requise_item,address=%cpp_exercices%/classes_objets_constructeurs.html,label={Classes, objets et contructeurs})  
-    </ul>
-  </p>
-  </div> 
+    </div> 
+  </div>
 </div>
 </body>
 </html>

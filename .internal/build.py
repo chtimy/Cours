@@ -51,6 +51,7 @@ def _transform_html_file(path):
 
         new_file_content = _resolve_file(content, path)
 
+        # if new_file_content.find("index") > -1: 
         new_file_content = _nav_bar(new_file_content, path)
 
         new_path = _convertPartialToHtmlPath(path)
@@ -65,7 +66,7 @@ def _transform_html_file(path):
 repo = Repo("..")
 assert not repo.bare
 git = repo.git
-files = git.diff('--name-only').split('\n')
+files = git.diff('--name-only', '--cached').split('\n')
 untracked_files = repo.untracked_files
 files = files + untracked_files
 
