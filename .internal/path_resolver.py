@@ -12,5 +12,7 @@ def resolve_paths(data, targetFilePath):
     data = data.replace("%cpp_cours%", cpp_cours_path)
     cpp_exercices_path = newPath+"cpp/exercices"
     data = data.replace("%cpp_exercices%", cpp_exercices_path)
+    java_projet_path = newPath+"java/Projets"
+    data = data.replace("%java_projets%", java_projet_path)
 
     return data

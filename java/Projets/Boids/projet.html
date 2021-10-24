@@ -57,9 +57,17 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">d</span> Ecrire les accesseurs <span class="w3-codespan">setX</span>, <span class="w3-codespan">getX</span>, <span class="w3-codespan">setY</span>, <span class="w3-codespan">getY</span>  </p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">e</span> Dans la fonction main (créer une nouvelle classe contenant la fonction main), créer deux <span class="w3-codespan">Vector2</span> en utilisant les deux constructeurs. Afficher les attributs des deux objets.</p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">f</span> Toujours dans la fonction main, attribuer de nouvelles valeurs aux coordonnées des deux objets en utilisant leurs accesseurs. </p>
-    <div class="w3-panel w3-yellow w3-card-4">
-      <h3 class="w3-left">Attention!</h3><p class="w3-large"> Il faut utiliser la bonne visibilité.</p>
-    </div> 
+    <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-red w3-pale-red w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align:middle; width: 13%;">
+      <img src="../../../.internal/Images/notify.svg" alt="Attention" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align:middle; text-align:justify">
+      <p class="w3-large" style="text-align:left;"><i>Il faut utiliser la bonne visibilité.</i></p>
+    </div>
+  </div>
+</div>
+<p></p>
 
     <h3 class="w3-opacity">La position et le déplacement d'un boid</h3>
       <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
@@ -92,16 +100,25 @@ body {font-family: "Lato", sans-serif}
       <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
     <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%"><a href="../../../java/Cours/tableaux.html" style="text-decoration: none;"><li class="w3-hover-green">Tableaux et parcours</li></a></ul></p>
   </div> 
-    <p class="w3-justify w3-large">Des nouvelles classes sont disponibles à l'adresse suivante afin de pouvoir afficher des polygones à l'écran. Parmi ces nouvelles classes nous avons : </p>
+    <p class="w3-justify w3-large">Des nouvelles classes sont disponibles <a href="https://github.com/chtimy/Cours/tree/master/java/Projets/Boids/code" alt="https://github.com/chtimy/Cours/tree/master/java/Projets/Boids/code">ici</a> afin de pouvoir afficher des polygones à l'écran. Parmi ces nouvelles classes nous avons : </p>
     <ul class="w3-large" style="text-align: left;">
       <li><span class="w3-codespan">PainterWindow</span> : représente une fenêtre encapsulant une surface pour dessiner des objets 2D</li>
       <li><span class="w3-codespan">Drawer</span> : représente une sorte de pinceau permettant de dessiner des polygones</li>
     </ul>
     <p class="w3-justify w3-large">
-      Une autre classe appelée <span class="w3-codespan">Demo</span> contient la méthode <span class="w3-codespan">main</span> qui créé une nouvelle fenêtre <span class="w3-codespan">PainterWindow</span> en lui passant un nouveau <span class="w3-codespan">Drawer</span>. Une boucle infinie permet de dessiner des objets et de les faire évoluer au cours du temps (comme le déplacement d'un boid par exemple). La méthode <span class="w3-codespan">repaint</span> de la classe <span class="w3-codespan">Drawer</span> efface le dessin et redessine à partir des dernières instrutions de dessin. Ces instructions de dessin, il y en a deux précédant la méthode <span class="w3-codespan">repaint</span> qui sont <span class="w3-codespan">drawPolygon</span>. Cette méthode met en place le dessin d'un polygone afin qu'il soit affiché au prochain <span class="w3-codespan">repaint</span>. La méthode prend en paramètre un tableau de coordonnées x et un tableau de coordonnées y ainsi que le nombre de sommets en 3ème paramètre. Enfin dans la méthode <span class="w3-codespan">main</span> un bloc <span class="w3-codespan">try-catch</span> apparaît, celui-ci permet de faire dormir la boucle pendant 1000/60 millisecondes, soit une fréquence de 60 images par secondes).
+      Une autre classe appelée <span class="w3-codespan">Demo</span> contient la méthode <span class="w3-codespan">main</span>. Une première étape d'initialisation avant la boucle <span class="w3-codespan">while</span> va créer une nouvelle fenêtre <span class="w3-codespan">PainterWindow</span> en lui passant un nouveau pinceau de type <span class="w3-codespan">Drawer</span>. L'étape suivante, dans la boucle <span class="w3-codespan">while</span> qui est infinie correspond à l'étape de mise à jour du dessin. Elle permet de dessiner différents objets et de les faire évoluer au cours du temps (comme le déplacement d'un boid par exemple). Deux triangles sont dessinés en exemple. Ensuite la méthode <span class="w3-codespan">repaint</span> de la classe <span class="w3-codespan">Drawer</span> efface le dessin de la boucle précédente pour dessiner les nouvelles formes géométriques (les deux triangles dessinés au dessus). 
+      Pour dessiner un polygone, on fait appelle à la méthode <span class="w3-codespan">drawPolygon</span> qui prend en paramètres :
+    </p>
+      <ul class="w3-large" style="text-align: left;">
+        <li>un tableau de coordonnées x (le x de chaque sommet du polygone)</li>
+        <li>un tableau de coordonnées y (le y de chaque sommet du polygone)</li>
+        <li>le nombre de sommets à dessiner (3 pour un triangle)</li>
+      </ul>
+    <p class="w3-justify w3-large">
+      Avant la fin de la boucle <span class="w3-codespan">while</span>, un bloc <span class="w3-codespan">try-catch</span> apparaît, celui-ci permet de faire dormir la boucle pendant 1000/60 millisecondes, soit une fréquence de 60 images par secondes).
     </p>
     <p class="w3-justify w3-large">
-      L'idée est de venir insérer du code dans la classe <span class="w3-codespan">Demo</span> afin de créer un boid et de le dessiner dans la fenêtre.
+      Tout le code pour créer des boids, les afficher et les animer va se trouver dans la méthode <span class="w3-codespan">main</span> de la classe <span class="w3-codespan">Demo</span>.
     </p>
     <p class="w3-justify w3-large">
       <span class="w3-badge w3-green">a</span> Ecrire une classe appelée <span class="w3-codespan">TriangleShape</span> qui contient 3 attributs de type <span class="w3-codespan">Position</span> appelés <span class="w3-codespan">p1</span>, <span class="w3-codespan">p2</span> et <span class="w3-codespan">p3</span> qui représentent les 3 sommets d'un triangle. En plus des positions, cette classe contient un autre attribut appelée <span class="w3-codespan">color</span> de type <span class="w3-codespan">int</span> représentant une couleur sous sa forme hexadécimale. Exemple, la couleur rouge est représentée par <span class="w3-codespan">0xff0000</span>
