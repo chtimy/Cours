@@ -10,10 +10,17 @@
 body {font-family: "Lato", sans-serif}
 </style>
 </head>
-<body>
 
 <body>
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-content" style="max-width:2000px;margin-top:0px">
+<div class="w3-sidebar w3-opacity" style="width: 20%; margin-top:20vh">
+<a href="../../../.internal/../index.html" class="w3-bar w3-green w3-left-align w3-button w3-mobile">Accueil</a>
+<a href="#Part0" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Introduction</a>
+<a href="#Part1" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Analyse et construction d'un Boid</a>
+<a href="#Part2" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Reste pas planté là! Bouges!</a>
+</div>
+
+
   <div class="w3-display-container w3-center">
     <img src="Images/slide.jpg" style="max-width:800px; width:100%; height:60%;" title="https://www.piqsels.com/en/public-domain-photo-zvqbp/download">
   </div>
@@ -23,7 +30,7 @@ body {font-family: "Lato", sans-serif}
   </div>
 
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
-    <h2 class="w3-opacity"><i>Introduction</i></h2>
+    <h2 class="w3-opacity" id="Part0">Introduction</h2>
      <div class="w3-panel w3-light-grey">
       <span style="font-size:150px;line-height:0.6em;opacity:0.2">&#10077;</span>
       <p class="w3-large w3-justify" style="margin-top:-40px">
@@ -38,40 +45,135 @@ body {font-family: "Lato", sans-serif}
   </div>
 
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
-    <h2 class="w3-opacity"><i>Analyse et construction d'un Boid</i></h2>
-    <h3 class="w3-opacity"><i>Créer sa première classe Vector2</i></h3>
+    <h2 class="w3-opacity" id="Part1">Analyse et construction d'un Boid</h2>
+    <h3 class="w3-opacity">Créer sa première classe Vector2</h3>
       <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
     <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%"><a href="../../../java/Cours/objets_et_classes.html" style="text-decoration: none;"><li class="w3-hover-green">Objets et Classes</li></a><a href="../../../java/Cours/accesseurs.html" style="text-decoration: none;"><li class="w3-hover-green">Accesseurs</li></a><a href="../../../java/Cours/visibilite.html" style="text-decoration: none;"><li class="w3-hover-green">Visibilité</li></a></ul></p>
   </div> 
     <p class="w3-justify w3-large">Avant de considérer tout l'aspect graphique du simulateur, nous allons d'abord nous intéresser à certains rouages à mettre en place. Pour commencer, un Boid doit pouvoir se déplacer dans un espace 2D, ce qui signifie que chacun doit avoir une position dans ce même espace. Mais avant de créer une classe pour position, nous avons besoin d'un objet mathématique permettant de décrire des coordonnées 2D. </p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">a</span> Ecrire une classe appelée <code class="w3-codespan">Vector2</code> qui contient deux attributs de type <code class="w3-codespan">float</code> appelés <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code> qui n'ont pas de contraintes particulières sur les valeurs qu'on peut leur assigner.</p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">b</span> Ecrire un premier constructeur de la classe <code class="w3-codespan">Vector2</code> qui prend deux paramètres <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code> qui sont assignés aux attributs de la classe <code class="w3-codespan">Vector2</code>. </p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">c</span> Ecrire un second constructeur de la classe <code class="w3-codespan">Vector2</code> qui ne prend pas de paramètre en entrée et qui initialise une valeur par défaut à <code class="w3-codespan">x</code> et <code class="w3-codespan">y</code>, soit la valeur <code class="w3-codespan">0f</code>.</p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">d</span> Ecrire les accesseurs <code class="w3-codespan">setX</code>, <code class="w3-codespan">getX</code>, <code class="w3-codespan">setY</code>, <code class="w3-codespan">getY</code>  </p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">e</span> Dans la fonction main (créer une nouvelle classe contenant la fonction main), créer deux <code class="w3-codespan">Vector2</code> en utilisant les deux constructeurs. Afficher les attributs des deux objets.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">a</span> Ecrire une classe appelée <span class="w3-codespan">Vector2</span> qui contient deux attributs de type <span class="w3-codespan">float</span> appelés <span class="w3-codespan">x</span> et <span class="w3-codespan">y</span> qui n'ont pas de contraintes particulières sur les valeurs qu'on peut leur assigner.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">b</span> Ecrire un premier constructeur de la classe <span class="w3-codespan">Vector2</span> qui prend deux paramètres <span class="w3-codespan">x</span> et <span class="w3-codespan">y</span> qui sont assignés aux attributs de la classe <span class="w3-codespan">Vector2</span>. </p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">c</span> Ecrire un second constructeur de la classe <span class="w3-codespan">Vector2</span> qui ne prend pas de paramètre en entrée et qui initialise une valeur par défaut à <span class="w3-codespan">x</span> et <span class="w3-codespan">y</span>, soit la valeur <span class="w3-codespan">0f</span>.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">d</span> Ecrire les accesseurs <span class="w3-codespan">setX</span>, <span class="w3-codespan">getX</span>, <span class="w3-codespan">setY</span>, <span class="w3-codespan">getY</span>  </p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">e</span> Dans la fonction main (créer une nouvelle classe contenant la fonction main), créer deux <span class="w3-codespan">Vector2</span> en utilisant les deux constructeurs. Afficher les attributs des deux objets.</p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">f</span> Toujours dans la fonction main, attribuer de nouvelles valeurs aux coordonnées des deux objets en utilisant leurs accesseurs. </p>
     <div class="w3-panel w3-yellow w3-card-4">
       <h3 class="w3-left">Attention!</h3><p class="w3-large"> Il faut utiliser la bonne visibilité.</p>
     </div> 
 
-    <h3 class="w3-opacity"><i>La position et le déplacement d'un boid</i></h3>
+    <h3 class="w3-opacity">La position et le déplacement d'un boid</h3>
       <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
     <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%"><a href="../../../java/Cours/afficher_des_objets.html" style="text-decoration: none;"><li class="w3-hover-green">Afficher des objets</li></a></ul></p>
   </div> 
     <p class="w3-justify w3-large">Tu viens de créer une nouvelle classe Vector2. Nous allons utiliser cette classe afin d'en créer deux nouvelles : <span class="w3-codespan">Position</span> et <span class="w3-codespan">Displacement</span>. Ces deux classes vont servir plus tard pour définir la position d'un boid dans un espace 2D et son déplacement.      
     </p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">a</span> Ecrire une classe appelée <code class="w3-codespan">Position</code> qui contient un attribut de type <code class="w3-codespan">Vector2</code> appelé <code class="w3-codespan">coordinates</code> qui n'a pas de contrainte particulière.</p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">b</span> Ecrire un premier constructeur de la classe <code class="w3-codespan">Position</code> qui prend un paramètre de type <code class="w3-codespan">Vector2</code> et qui est assigné à l'attribut <code class="w3-codespan">coordinates</code>.</p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">c</span> Ecrire un second constructeur de la classe <code class="w3-codespan">Position</code> qui ne prend pas de paramètre en entrée et qui initialise une valeur par défaut à <code class="w3-codespan">coordinates</code> soit la valeur <code class="w3-codespan">Vector2(0f, 0f)</code>.</p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">d</span> Ecrire les accesseurs <code class="w3-codespan">setCoordinates</code> et <code class="w3-codespan">getCoordinates</code></p>
-    <p class="w3-justify w3-large"><span class="w3-badge w3-green">e</span> Dans la fonction main, créer deux objets <code class="w3-codespan">Position</code> en utilisant les deux constructeurs que tu viens d'écrire, celui avec deux paramètres et celui sans paramètre.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">a</span> Ecrire une classe appelée <span class="w3-codespan">Position</span> qui contient un attribut de type <span class="w3-codespan">Vector2</span> appelé <span class="w3-codespan">coordinates</span> qui n'a pas de contrainte particulière.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">b</span> Ecrire un premier constructeur de la classe <span class="w3-codespan">Position</span> qui prend un paramètre de type <span class="w3-codespan">Vector2</span> et qui est assigné à l'attribut <span class="w3-codespan">coordinates</span>.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">c</span> Ecrire un second constructeur de la classe <span class="w3-codespan">Position</span> qui ne prend pas de paramètre en entrée et qui initialise une valeur par défaut à <span class="w3-codespan">coordinates</span> soit la valeur <span class="w3-codespan">Vector2(0f, 0f)</span>.</p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">d</span> Ecrire les accesseurs <span class="w3-codespan">setCoordinates</span> et <span class="w3-codespan">getCoordinates</span></p>
+    <p class="w3-justify w3-large"><span class="w3-badge w3-green">e</span> Dans la fonction main, créer deux objets <span class="w3-codespan">Position</span> en utilisant les deux constructeurs que tu viens d'écrire, celui avec deux paramètres et celui sans paramètre.</p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">f</span> Ecrire la méthode <span class="w3-codespan">ToString()</span> de la classe <span class="w3-codespan">Vector2</span> affichant par exemple : "(x, y)" avec x et y des valeurs. </p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">g</span> Ecrire la méthode <span class="w3-codespan">ToString()</span> de la classe <span class="w3-codespan">Position</span> affichant son attribut <span class="w3-codespan">coordinates</span>.</p>
-    <div class="w3-panel w3-yellow w3-card-4">
-      <h3 class="w3-left">Attention!</h3><p class="w3-large"> Tu peux réutiliser l'appel de <span class="w3-codespan">ToString()</span> de la classe <span class="w3-codespan">Vector2</span>.</p>
-    </div> 
+    <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-red w3-pale-red w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align:middle; width: 13%;">
+      <img src="../../../.internal/Images/notify.svg" alt="Attention" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align:middle; text-align:justify">
+      <p class="w3-large" style="text-align:left;"><i>Tu peux réutiliser l'appel de <span class="w3-codespan">ToString()</span> de la classe <span class="w3-codespan">Vector2</span></i></p>
+    </div>
+  </div>
+</div>
+<p></p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">h</span> Affiche les deux positions que tu as créees dans la fonction main.</p>
     <p class="w3-justify w3-large"><span class="w3-badge w3-green">i</span> De la même façon que pour la classe <span class="w3-codespan">Position</span>, créer une classe <span class="w3-codespan">Displacement</span></p>
+
+    <h3 class="w3-opacity">Vole petit boid!! Enfin... affiche toi sur mon écran</h3>
+      <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
+    <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%"><a href="../../../java/Cours/tableaux.html" style="text-decoration: none;"><li class="w3-hover-green">Tableaux et parcours</li></a></ul></p>
+  </div> 
+    <p class="w3-justify w3-large">Des nouvelles classes sont disponibles à l'adresse suivante afin de pouvoir afficher des polygones à l'écran. Parmi ces nouvelles classes nous avons : </p>
+    <ul class="w3-large" style="text-align: left;">
+      <li><span class="w3-codespan">PainterWindow</span> : représente une fenêtre encapsulant une surface pour dessiner des objets 2D</li>
+      <li><span class="w3-codespan">Drawer</span> : représente une sorte de pinceau permettant de dessiner des polygones</li>
+    </ul>
+    <p class="w3-justify w3-large">
+      Une autre classe appelée <span class="w3-codespan">Demo</span> contient la méthode <span class="w3-codespan">main</span> qui créé une nouvelle fenêtre <span class="w3-codespan">PainterWindow</span> en lui passant un nouveau <span class="w3-codespan">Drawer</span>. Une boucle infinie permet de dessiner des objets et de les faire évoluer au cours du temps (comme le déplacement d'un boid par exemple). La méthode <span class="w3-codespan">repaint</span> de la classe <span class="w3-codespan">Drawer</span> efface le dessin et redessine à partir des dernières instrutions de dessin. Ces instructions de dessin, il y en a deux précédant la méthode <span class="w3-codespan">repaint</span> qui sont <span class="w3-codespan">drawPolygon</span>. Cette méthode met en place le dessin d'un polygone afin qu'il soit affiché au prochain <span class="w3-codespan">repaint</span>. La méthode prend en paramètre un tableau de coordonnées x et un tableau de coordonnées y ainsi que le nombre de sommets en 3ème paramètre. Enfin dans la méthode <span class="w3-codespan">main</span> un bloc <span class="w3-codespan">try-catch</span> apparaît, celui-ci permet de faire dormir la boucle pendant 1000/60 millisecondes, soit une fréquence de 60 images par secondes).
+    </p>
+    <p class="w3-justify w3-large">
+      L'idée est de venir insérer du code dans la classe <span class="w3-codespan">Demo</span> afin de créer un boid et de le dessiner dans la fenêtre.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">a</span> Ecrire une classe appelée <span class="w3-codespan">TriangleShape</span> qui contient 3 attributs de type <span class="w3-codespan">Position</span> appelés <span class="w3-codespan">p1</span>, <span class="w3-codespan">p2</span> et <span class="w3-codespan">p3</span> qui représentent les 3 sommets d'un triangle. En plus des positions, cette classe contient un autre attribut appelée <span class="w3-codespan">color</span> de type <span class="w3-codespan">int</span> représentant une couleur sous sa forme hexadécimale. Exemple, la couleur rouge est représentée par <span class="w3-codespan">0xff0000</span>
+    </p>
+    <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-blue w3-pale-blue w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 16%;">
+      <img src="../../../.internal/Images/notes.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle; text-align: justify">
+      <p class="w3-large" style="text-align: left;"><i>Pour obtenir les couleurs en représentation hexadécimale, voir le site web suivant : <a href="https://htmlcolorcodes.com/fr/" alt="https://htmlcolorcodes.com/fr/">htmlcolorcodes.com</a></i></p>
+    </div>
+  </div>
+</div> 
+<p></p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">b</span>Ajouter à la classe un constructeur prenant en entrée 3 positions et une couleur. Attention de bien faire une <strong>copie</strong> de ces positions en entrée pour les affecter aux attributs <span class="w3-codespan">p1</span>, <span class="w3-codespan">p2</span> et <span class="w3-codespan">p3</span>.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">c</span> Ajouter un accesseur <span class="w3-codespan">getXPoints</span> qui retourne un tableau représentant les coordonnées de x de tous les points. Faire de même avec une classe appelée <span class="w3-codespan">getYPoints</span> pour les coordonnées y.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">d</span> Ajouter un accesseur <span class="w3-codespan">getColor</span> qui retourne la valeur de l'attribut <span class="w3-codespan">color</span>.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">e</span> Ajouter une méthode <span class="w3-codespan">toString</span> qui retourne un <span class="w3-codespan">String</span> qui affiche la position des sommets du triangle et sa couleur. Il faut penser à réutiliser la méthode <span class="w3-codespan">toString</span> déjà écrite de la classe <span class="w3-codespan">Position</span>.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">f</span> Créer une nouvelle classe appelée <span class="w3-codespan">Boid</span>. Elle contient une position de type <span class="w3-codespan">Position</span> et une forme de type <span class="w3-codespan">TriangleShape</span>.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">g</span> Ajouter un constructeur qui prend en entrée une forme et une position.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">h</span> Ajouter un accesseur <span class="w3-codespan">getPosition</span> qui retourne la position du boid.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">i</span> Ajouter un accesseur <span class="w3-codespan">getShape</span> qui retourne la forme du boid.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">j</span> Ajouter une méthode <span class="w3-codespan">toString</span> qui retourne un <span class="w3-codespan">String</span> qui affiche la position et sa forme. Il faut penser à réutiliser les méthodes <span class="w3-codespan">toString</span> déjà écrites.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">k</span> Ajouter une méthode <span class="w3-codespan">translate</span> qui prend en entrée un objet de type <span class="w3-codespan">Displacement</span> et qui va modifier la position du boid en ajoutant le déplacement.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">l</span> Dans la classe <span class="w3-codespan">Demo</span>, dans la méthode <span class="w3-codespan">main</span>, avant la boucle infinie, créer un nouvelle forme <span class="w3-codespan">TriangleShape</span> avec les sommets (0, 0), (-5, 10), (5, 10) et une couleur rouge.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">m</span>Créer un nouveau <span class="w3-codespan">Boid</span> avant la boucle infinie à partir de la forme déclarée précédemment avec une position de (500, 500). Ensuite dessiner un polygone dans la boucle à partir de la forme du boid et de sa position.
+    </p>
+
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">n</span> Toujours dans la méthode <span class="w3-codespan">main</span>, appliquer une translation de 0.5 en x au <span class="w3-codespan">Boid</span> avant de le dessiner.
+    </p>
+  </div>
+
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <h2 class="w3-opacity" id="Part2">Reste pas planté là! Bouges!</h2>
+    <p class="w3-justify w3-large">En construction</p>
   </div>
 </body>
 </html>

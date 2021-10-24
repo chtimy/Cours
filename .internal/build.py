@@ -70,7 +70,6 @@ files = git.diff('--name-only', '--cached').split('\n')
 untracked_files = repo.untracked_files
 files = files + untracked_files
 
-
 #Get all html files
 for file in filter(lambda f: f.endswith('.partial.html'), files):
     root_path="../"
