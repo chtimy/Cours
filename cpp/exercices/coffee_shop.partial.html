@@ -22,7 +22,7 @@ _include(header,mytitle={Coffee shop})
       <span class="w3-badge w3-green">a</span> Ecrire une classe appelée <span class="w3-codespan">TasseCafe</span> qui contient une quantité de café liquide. Une tasse de café doit pouvoir être remplie, mais il faut bien surveiller que la tasse ne puisse pas contenir plus que sa capacité de 50ml. Une tasse doit pouvoir être vidée (lorsqu'un client le boit) d'une certaine quantité.
     </p>
     <p %p%>
-      <span class="w3-badge w3-green">b</span> Ecrire une fonction <span class="w3-codespan">main</span> comme point d'entrée du programme et créer un nouveau <span class="w3-codespan">Cafe</span> avec différentes quantité de café liquide. Essayer de trouver des cas absurdes et faux pour voir si la classe <span class="w3-codespan">Cafe</span> gère bien les valeurs inattendues.
+      <span class="w3-badge w3-green">b</span> Ecrire une fonction <span class="w3-codespan">main</span> comme point d'entrée du programme et créer un nouveau <span class="w3-codespan">TasseCafe</span> avec différentes quantité de café liquide. Essayer de trouver des cas absurdes et faux pour voir si la classe <span class="w3-codespan">TasseCafe</span> gère bien les valeurs inattendues.
     </p>
     <p %p%>
       <span class="w3-badge w3-green">c</span> Pour faire le café, il faut une machine qui puisse moudre le grain et chauffer de l'eau. Ecrire une classe appelée <span class="w3-codespan">MachineCafe</span> qui contient une quantité d'eau et une quantité de graines de café. On doit pouvoir y ajouter une quantité de graines sans dépasser la capacité du réservoir de 300g. On doit pouvoir y ajouter une quantité d'eau sans dépasser la capacité du réservoir de 3 litres. La machine doit pouvoir fabriquer 3 types de café :
@@ -35,13 +35,36 @@ _include(header,mytitle={Coffee shop})
     <p %p%>
       Pour fabriquer le café, on passe une tasse à la machine, on appuie sur un bouton (envoyer un type de café : ristretto, expresso, lungo). Ne pas oublier la loi de Lavoisier : "Rien se perd, rien ne se créé, tout se transforme".
     </p>
-      <p %p%>
+    <p %p%>
       <span class="w3-badge w3-green">d</span> Continuer d'écrire dans la fonction <span class="w3-codespan">main</span> en créant une nouvelle <span class="w3-codespan">MachineCafe</span> avec une certaine quantité d'eau et de graines de café. Faire fonctionner la machine en produisant chaque type de café. Essayer de demander un café lorsque la quantité d'eau ou de graines de café est insuffisant.
     </p>
   </div>
   <div %div%>
+    <h2>Un café? A quelle heure vous dites?</h2>
+    _include(fiche_requise,elements=_include(fiche_requise_item,address=%cpp_cours%/collections.html,label=Collections))
+    <p %p%>
+      Imaginons maintenant que nous avons une super marchine à café capable d'enregistrer toutes les commandes de café demandées dans la journée. Cette historique permettra ensuite au gérant de comparer ce qu'il a vendu dans la journée avec l'historique pour vérifier si la machine "boit pas des cafés toute seule".
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">a</span> On va enregistrer toutes les commandes de café dans une nouvelle classe appelée <code>Historique</code>. L'historique doit pouvoir enregistrer chaque tasse à café produite en fonction de sa quantité de café. Créer cette classe qui contient une collection appropriée d'objets <code>TasseCafe</code>. 
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">b</span> Créer une méthode <code>enregistrer</code> qui va prendre en entrée un objet <code>enregistrer</code>"On va enregistrer toutes les commandes de café dans une nouvelle classe appelée <code>Historique</code>. L'historique doit pouvoir enregistrer chaque tasse à café produite en fonction de sa quantité de café. Créer cette classe qui contient une collection appropriée d'objets <code>TasseCafe</code>. 
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">c</span> Créer une méthode <code>effacerTout</code> qui va supprimer tout l'historique en supprimant les objets <code>TasseCafe</code> de la collection.
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">d</span> Créer une méthode <code>afficher</code> qui affiche l'ensemble de l'historique sous la forme :<br/>
+      <div class="w3-code">
+      Café [ristretto|expresso|lungo]<br/>
+      Café [ristretto|expresso|lungo]<br/>
+      ...
+      </div>
+    </p>
+  </div>
+  <div %div%>
     <h2>Donnez moi votre argent, je vous offrirai un café</h2>
-    [Suite]
   </div>
 </body>
 </html>

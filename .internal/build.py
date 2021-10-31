@@ -75,5 +75,6 @@ for file in filter(lambda f: f.endswith('.partial.html'), files):
     root_path="../"
     path=Path(root_path+file)
     if(path.exists()):
+        print("Parsing : " + path.name)    
         _transform_html_file(Path(path))
       
