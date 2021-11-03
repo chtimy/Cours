@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="151.661mm"
+   height="94.453545mm"
+   viewBox="0 0 151.661 94.453545"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="exceptions_flow.svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker1355"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1353" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1186"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1184" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path865" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path862" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.9563401"
+     inkscape:cx="403.14535"
+     inkscape:cy="96.759687"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1600"
+     inkscape:window-height="838"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-14.707269,-14.330605)">
+    <g
+       id="g1311"
+       transform="translate(0,7.193222)">
+      <rect
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:0.665;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:2.66, 2.66;stroke-dashoffset:0;stop-color:#000000"
+         id="rect1248"
+         width="63.079018"
+         height="53.119179"
+         x="77.742134"
+         y="48.139248" />
+      <text
+         xml:space="preserve"
+         style="font-size:6.48021px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.405013"
+         x="97.883629"
+         y="97.69326"
+         id="text1306"><tspan
+           sodipodi:role="line"
+           id="tspan1304"
+           x="97.883629"
+           y="97.69326"
+           style="stroke-width:0.405013">Programme</tspan></text>
+    </g>
+    <g
+       id="g1319"
+       transform="translate(0,-53.119175)">
+      <rect
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:0.665;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:2.66, 2.66;stroke-dashoffset:0;stop-color:#000000"
+         id="rect1313"
+         width="63.079018"
+         height="33.476147"
+         x="77.742134"
+         y="67.78228" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.29167px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.405013"
+         x="109.22678"
+         y="97.69326"
+         id="text1317"><tspan
+           sodipodi:role="line"
+           id="tspan1315"
+           x="109.22678"
+           y="97.69326"
+           style="font-size:5.29167px;stroke-width:0.405013">Système d'exploitation</tspan></text>
+    </g>
+    <g
+       id="g842"
+       transform="translate(-29.602875,7.193222)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.798;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect837"
+         width="42.606007"
+         height="15.493093"
+         x="117.84965"
+         y="74.807739" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="139.02553"
+         y="84.089073"
+         id="text835"><tspan
+           sodipodi:role="line"
+           id="tspan833"
+           x="139.02553"
+           y="84.089073"
+           style="stroke-width:0.264583">Height</tspan></text>
+    </g>
+    <g
+       id="g850"
+       transform="translate(-29.602875,-15.769756)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.798;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect844"
+         width="42.606007"
+         height="15.493093"
+         x="117.84965"
+         y="74.807739" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="139.02553"
+         y="84.089073"
+         id="text848"><tspan
+           sodipodi:role="line"
+           id="tspan846"
+           x="139.02553"
+           y="84.089073"
+           style="stroke-width:0.264583">Main</tspan></text>
+    </g>
+    <g
+       id="g1324"
+       transform="translate(0,-8.8531964)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.798;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+         id="rect852"
+         width="42.606007"
+         height="15.493093"
+         x="88.246773"
+         y="27.49847" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="109.42265"
+         y="36.779804"
+         id="text856"><tspan
+           sodipodi:role="line"
+           id="tspan854"
+           x="110.16679"
+           y="36.779804"
+           style="stroke-width:0.264583">Quelque part </tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 131.69129,89.638614 c 22.06896,-0.21213 20.98257,-21.74492 -0.82999,-21.303"
+       id="path860"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1186)"
+       d="m 131.69129,62.802357 c 22.06896,-0.21213 20.98257,-36.684688 -0.82999,-36.242768"
+       id="path1182"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g1341"
+       transform="translate(-6.7782285,7.193222)">
+      <ellipse
+         style="fill:#ffdd55;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000"
+         id="path1336"
+         cx="161.29417"
+         cy="72.208885"
+         rx="11.61982"
+         ry="6.363235" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="161.29416"
+         y="73.592201"
+         id="text1334"><tspan
+           sodipodi:role="line"
+           id="tspan1332"
+           x="161.29416"
+           y="73.592201"
+           style="stroke-width:0.264583">Exception</tspan></text>
+    </g>
+    <g
+       id="g1349"
+       transform="translate(-6.7782285,-26.421258)">
+      <ellipse
+         style="fill:#ffdd55;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000"
+         id="ellipse1343"
+         cx="161.29417"
+         cy="72.208885"
+         rx="11.61982"
+         ry="6.363235" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="161.29416"
+         y="73.592201"
+         id="text1347"><tspan
+           sodipodi:role="line"
+           id="tspan1345"
+           x="161.29416"
+           y="73.592201"
+           style="stroke-width:0.264583">Exception</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1355)"
+       d="M 89.085287,27.666238 H 45.372631 v 37.626084 h 32.092836"
+       id="path1351"
+       sodipodi:nodetypes="cccc" />
+    <g
+       id="g1402"
+       transform="translate(7.193222,-19.643029)">
+      <rect
+         style="fill:#ffdd55;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000"
+         id="rect1397"
+         width="56.992451"
+         height="23.792965"
+         x="7.7465467"
+         y="51.735867" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;white-space:pre;inline-size:56.9925;stroke-width:0.264583"
+         x="36.242771"
+         y="56.992451"
+         id="text1395"><tspan
+           x="36.242771"
+           y="56.992451"><tspan
+             style="stroke-width:0.264583">Arrêtes-toi tout de suite</tspan><tspan
+             y="56.992451"> </tspan></tspan><tspan
+           x="36.242771"
+           y="62.284116"><tspan
+             style="stroke-width:0.264583">de t'exécuter, je viens de</tspan><tspan
+             y="62.284116"> </tspan></tspan><tspan
+           x="36.242771"
+           y="67.57578"><tspan
+             style="stroke-width:0.264583">recevoir une exception de</tspan><tspan
+             y="67.57578"> </tspan></tspan><tspan
+           x="36.242771"
+           y="72.867444"><tspan
+             style="stroke-width:0.264583">ta part</tspan></tspan></text>
+    </g>
+  </g>
+</svg>

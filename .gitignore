@@ -5,7 +5,14 @@ Ago
 *.o
 */.vs
 */Debug
+*.pyc
+*.cmake
+*.bin
+*.exe
+*.stamp
+*.stamp.rule
+*.stamp.depend
+*.stamp.list
 
 java/Assets
-*.svg
 lab
