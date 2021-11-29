@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="110.77847mm"
+   height="84.236198mm"
+   viewBox="0 0 110.77847 84.236198"
+   version="1.1"
+   id="svg2329"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="path.svg">
+  <defs
+     id="defs2323">
+    <marker
+       style="overflow:visible"
+       id="marker3215"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path3213" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path2938" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="249.26692"
+     inkscape:cy="167.0507"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1600"
+     inkscape:window-height="838"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2326">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-6.1175094,1.2708276)">
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
+       x="6.1175094"
+       y="13.363476"
+       id="text2894"><tspan
+         sodipodi:role="line"
+         id="tspan2892"
+         x="6.1175094"
+         y="13.363476"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583">[...]</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="18.655138"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2914">void toUnixPath(Path *path)</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="23.9468"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2896">{</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="29.238462"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2900">   [...]</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="34.530125"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2916">}</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="39.821789"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2904" /><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="45.113449"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2906">int main()</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="50.405113"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2908">{</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="55.696774"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2910">   [...]</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="60.988438"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2912">   toUnixPath(&amp;windowsPath);</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="66.280098"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2918">   [...]</tspan><tspan
+         sodipodi:role="line"
+         x="6.1175094"
+         y="71.571762"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         id="tspan2920">}</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 51.850287,57.195679 c 47.25674,-42.018136 7.865899,-67.205734 0.53454,-43.564934"
+       id="path2922"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g2933"
+       transform="translate(-16.303442,1.3363476)">
+      <rect
+         style="fill:#ffeeaa;stroke:#28220b;stroke-width:0.365001;stop-color:#000000"
+         id="rect2928"
+         width="52.919361"
+         height="11.492592"
+         x="71.54493"
+         y="29.964153" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="98.355186"
+         y="34.210499"
+         id="text2926"><tspan
+           sodipodi:role="line"
+           id="tspan2924"
+           x="98.355186"
+           y="34.210499"
+           style="stroke-width:0.264583">copie de &amp;windowsPath </tspan><tspan
+           sodipodi:role="line"
+           x="98.355186"
+           y="39.502163"
+           style="stroke-width:0.264583"
+           id="tspan3668">dans *path</tspan></text>
+    </g>
+  </g>
+</svg>
