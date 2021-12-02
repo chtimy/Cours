@@ -1,0 +1,87 @@
+_include(header,mytitle={Pointeurs et références (partie 1)})
+
+<div class="w3-display-container w3-center">
+  <img src="images/pointeur.png" style="max-width:800px; width:100%; height:60%;" >
+</div>
+
+  <div %div%>
+    <h1 class="w3-wide">Pointeurs et références (partie 1)</h1>
+  </div>
+  <div %div%>
+    <h2>Les premiers pas avec les pointeurs</h2>
+    _include(fiche_requise,elements=_include(fiche_requise_item,address=%cpp_cours%/references_pointeurs.html,label=Références et cours))
+    <p %p%>
+      <span class="w3-badge w3-green">a</span> Dans la fonction <code>main</code>:
+    </p>
+    <ul %ul%>
+      <li>créer une première variable de type <code>float</code> appelée <code>value</code> et lui affecter une valeur de <code>16.0</code></li>
+      <li>écrire un pointeur sur <code>float</code> appelé <code>pointeur</code> et lui affecter l'adresse de <code>value</code>.</li>
+    </ul>  
+    <p %p%>
+      <span class="w3-badge w3-green">b</span> Ecrire une fonction <code>increment</code> qui prend en entrée un paramètre de type pointeur sur <code>float</code> et qui ajoute 1 à la valeur pointée par le paramètre. Dans la fonction <code>main</code>:
+    </p>
+    <ul %ul%>
+      <li>appeler la fonction <code>increment</code> en lui envoyant l'adresse de <code>value</code></li>
+      <li>appeler une seconde fois la fonction <code>increment</code> en lui envoyant cette fois-ci le pointeur <code>pointeur</code></li>
+      <li>Afficher <code>value</code> et la valeur pointée par <code>pointeur</code></li>
+    </ul> 
+    <p %p%>
+      Que remarques-tu? 
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">c</span> Dans la fonction <code>main</code>, afficher l'adresse de <code>value</code>. Dans la fonction <code>increment</code>, afficher l'adresse contenue dans le paramètre d'entrée. Que remarques-tu?
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">d</span> Dans la fonction <code>main</code>:
+    </p>
+    <ul %ul%>
+    <li>créer un pointeur appelé <code>pointeur2</code></li>
+    <li>lui adresser l'adresse de <code>value</code> à partir du pointeur <code>pointeur</code></li>
+    <li>modifier la valeur de <code>value</code> à partir de <code>pointeur2</code> en lui affectant <code>17</code></li>
+    <li>afficher <code>value</code> pour véifier sa valeur.</li>
+  </ul>
+  </div>
+  <div %div%>
+    <h2>Pointeur vers des objets</h2>
+    <p %p%>
+      <span class="w3-badge w3-green">a</span> Créer une classe <code>Position</code> avec deux attributs de type <code>float</code> appelés <code>x</code> et <code>y</code>. Ensuite:
+    </p>
+    <ul %ul%>
+      <li>Ecrire un constructeur pour initialiser correctement un objet <code>Position</code></li>
+      <li>Ecrire un accesseur <code>set</code> et <code>get</code> qui va respectivement modifier et lire les attributs</li>
+      <li>Créer un objet <code>Position</code> appelé <code>position</code> dans la fonction <code>main</code>
+      <li>Envoyer au constructeur de la classe <code>Position</code> la position (1, 5)</li>
+      <li>Créer un autre objet <code>Position</code> appelé <code>position2</code> et lui affecter (7, 8)</li>
+    </li>
+    <p %p%>
+      <span class="w3-badge w3-green">b</span> Ecrire une fonction <code>distance</code> qui prend en entrée deux pointeurs sur des <code>Position</code>. Dans cette méthode, on souhaite calculer la distance entre les deux <code>Position</code> et retourner le résultat en type <code>float</code>. Appeler cette fonction dans la fonction <code>main</code> en envoyant <code>position</code> et <code>position2</code>.
+    </p>    
+    <p %p%>
+      <span class="w3-badge w3-green">c</span> Ecrire un autre constructeur dans la classe <code>Position</code> qui prend en entrée un pointeur sur <code>Position</code> et permettant d'initialiser la nouvelle <code>Position</code>. Dans la fonction <code>main</code>, créer une nouvelle <code>Position</code> en envoyant <code>position2</code>.
+  </div>
+  <div %div%>
+    <h2>Copie de gros objets vs pointeur</h2>
+    <p %p%>
+      L'idée ici est de calculer la différence de performance entre une fonction qui prend un paramètre "par valeur", c'est à dire qui fait une copie de la valeur (comme la copie de tout un objet) et une fonction qui prend un paramètre par référence (c'est à dire qui ne copie que l'adresse de l'objet).
+    </p>
+    <p %p%>
+      Pour tester les performances il faut utiliser un outil qui permet de mesurer des temps assez précisément de plusieurs lignes d'instruction. Pour l'exercice suivant, nous utiliserons les outils données dans la bibliothèque standard c++ pour mesurer le temps d'exécution des deux fonctions. Voici un exemple d'utilisation:
+    </p>
+    <div id='write'  class=''>
+      <pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 323px; left: 344.492px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;iostream&gt;</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;chrono&gt;</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp=""></span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">main</span>()</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">auto</span> <span class="cm-variable">t1</span> <span class="cm-operator">=</span> <span class="cm-variable">std::chrono::high_resolution_clock::now</span>();</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// instructions à mesurer</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">auto</span> <span class="cm-variable">t2</span> <span class="cm-operator">=</span> <span class="cm-variable">std::chrono::high_resolution_clock::now</span>();</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// Calcul et affichage du temps</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">std::chrono::duration</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">double</span>, <span class="cm-variable">std::milli</span><span class="cm-operator">&gt;</span> <span class="cm-variable">elapsed_time</span> <span class="cm-operator">=</span> <span class="cm-variable">t2</span> <span class="cm-operator">-</span> <span class="cm-variable">t1</span>;</span></pre></div><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">std::cout</span> <span class="cm-operator">&lt;&lt;</span> <span class="cm-variable">ms_double</span>.<span class="cm-variable">count</span>() <span class="cm-operator">&lt;&lt;</span> <span class="cm-string">"ms"</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-number">0</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 416px;"></div><div class="CodeMirror-gutters" style="display: none; height: 416px;"></div></div></div></pre><p>&nbsp;</p>
+    </div>
+    <p %p%>
+      <span class="w3-badge w3-green">a</span> Créer une première fonction qui prend en entrée un paramètre de type <code>std::vector&lt;float&gt;</code>. Le contenu de la fonction peut être vide. 
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">b</span> Dans la fonction <code>main</code>, créer un premier vecteur de un million de <code>float</code> et mesurer l'appel de la fonction en envoyant ce vecteur. 
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">c</span> Créer une seconde fonction qui prend en entrée un paramètre de type pointeur sur <code>std::vector&lt;float&gt;</code>. Le contenu de la fonction peut être vide. 
+    </p>
+    <p %p%>
+      <span class="w3-badge w3-green">d</span> Dans la fonction <code>main</code>, utiliser le même tableau de <code>float</code> et mesurer l'appel de la seconde fonction. Que remarques-tu entre les deux temps? Peux-tu l'expliquer?
+    </p>
+  </div>
+</body>
+</html>
