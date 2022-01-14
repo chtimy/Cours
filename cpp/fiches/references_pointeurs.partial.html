@@ -1,9 +1,9 @@
-_include(header,mytitle={Références et pointeurs (partie 1)})
+_include(header,mytitle={Mémoire dynamique : Références et pointeurs (partie 1)})
 <div class="w3-display-container w3-center">
   <img src="images/references_pointeurs/header.jpg" style="max-width:800px; width:100%; height:60%;" title="https://pixabay.com/fr/illustrations/bureau-mod%c3%a8le-art-3045123/" />
 </div>
 <div %div%>
-  <h1 class="w3-wide">Pointeurs et références (partie 1)</h1>
+  <h1 class="w3-wide">Mémoire dynamique : Pointeurs et références (partie 1)</h1>
 </div>
 <div %div%>
   <h2>Introduction</h2>
@@ -97,7 +97,7 @@ _include(header,mytitle={Références et pointeurs (partie 1)})
   <p %p%>
     C'est la même chose pour la variable <code>b</code>. On lui affecte la valeur 3 dans la case mémoire qui lui a été réservée à l'adresse <code>@b</code>.
   </p>
-  <h3>Etape 4</h3>
+  <h3>Etape 3</h3>
   <div id='write'  class=''>
     <pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 43.6094px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">b</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre>
   </div>
@@ -105,7 +105,7 @@ _include(header,mytitle={Références et pointeurs (partie 1)})
   <p %p%>
     Cette ligne signifie que le programme va accéder à la valeur à l'adresse <code>@b</code> pour venir la copier dans la case mémoire à l'adresse <code>@a</code>. Les deux cases <code>@a</code> et <code>@b</code> ont la même valeur 5.
   </p>
-  <h3>Etape 5</h3>
+  <h3>Etape 4</h3>
   <div id='write'  class=''>
     <pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 11px; left: 43.6094px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">a</span> <span class="cm-operator">=</span> <span class="cm-number">6</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre>
   </div>
