@@ -1,0 +1,123 @@
+_include(header,mytitle={Visual Studio : Création d'une solution et d'un projet})
+<div class="w3-display-container w3-center">
+  <img src="images/logo.svg" style="max-width:800px; height:20%;" title="https://pixabay.com/fr/illustrations/bureau-mod%c3%a8le-art-3045123/" />
+</div>
+<div %div%>
+  <h1 class="w3-wide">Visual Studio : Création d'une solution et d'un projet</h1>
+</div>
+<div %div%>
+  <h2>Introduction</h2>
+  <p %p%>
+    Visual Studio est un IDE (Integrated Development Environment) ou Environnement de développement. Il est pas mal apprécié chez les développeur pour la qualité de l'outil. Bien entendu à chacun ses amours, à chacun des outils. L'idée dans cette série de fiches c'est de donner deux trois conseils pour commencer à se servir de cet IDE notamment la création de projet (dans cette fiche), la compilation, le debuggage, etc...
+  </p>
+  <p %p%>
+    Cette première fiche va nous guider dans la création d'une nouvelle solution Visual Studio dans lequel on pourra créer un ou plusieurs projets dans lesquels on pourra créer et écrire des fichiers sources. En premier lieu, il faut s'assurer que Visual Studio soit bien installé sur ta machine et que sa version soit en langue anglaise, parce que les snapshots qui seront montrés sont en anglais. 
+  </p>
+  _include(notes,content={<p %p%>
+    Si tu l'as en français, tu peux changer de la manière suivante :
+  </p>
+  <ul %ul%>
+  <li>Lancer <b>Visual Studio Installer</b></li>
+  <li>Cliquer sur le bouton <span class="w3-tag w3-grey">modifier</span> à côté de la version de Visual installée que tu utilises</li>
+  <li>Changer d'onglet vers <b>Modules linguistiques</b></li>
+  <li>Décocher Français, cocher Anglais</li>
+  <li>Valider</li>
+</ul>
+<p %p%>
+  L'installeur devrait changer la langue. Il faut pense à fermer Visual Studio pour que l'intalleur ne se bloque pas.
+  </p>
+  <img %img% src="images/installer.png" />
+})
+</div>
+<div %div%>
+    <h2 %h2%>Création d'une solution</h2> 
+    <p %p%>
+      Pour commencer, il faut lancer Visual Studio, tu devrais arriver sur la fenêtre de lancement comme celle ci-dessous. 
+    </p>
+    _include(notes,content={Si tu n'as pas cette fenêtre, c'est que tu as déjà ouvert Visual Studio sans passer par la fenêtre de lancement, ce n'est pas grave puisque c'est vers là que l'on veut aller.})
+    <img %img% src="images/01.png" />
+    <p %p%>
+      On va lancer Visual Studio à vide, c'est à dire qu'il faut cliquer sur <span class="w3-tag w3-grey">continue without code -></span> en bas à droite de la fenêtre. On doit donc arriver sur la fenêtre principale de Visual Studio. Selon les thèmes graphiques, on doit avoir ce genre de fenêtre :
+    </p>
+    <img %img% src="images/02.png" />
+    <p %p%>
+      Maintenant, on va créer une nouvelle solution. Dans le menu en haut à gauche, cliquer sur le menu <span class="w3-tag w3-grey">File</span>, ensuite <span class="w3-tag w3-grey">New</span> et enfin <span class="w3-tag w3-grey">Project...</span>. Une nouvelle fenêtre pop-up apparaît. Dans cette fenêtre on veut créer une solution vide, on va donc taper dans la barre de recherche le mot clé suivant <i>"empty solution"</i> et normalement on devrait voir apparaître l'item <i>"Blank Solution"</i>. Il faut sélectionner l'item et cliquer sur le bouton <span class="w3-tag w3-grey">Next</span>. 
+    </p>
+    <img %img% src="images/04.png" />
+    <p %p%>
+      Une nouvelle fenêtre pop-up apparaît, cette fois-ci pour la création d'une nouvelle solution. Il faut donner un nom à la solution. Pour ma part j'ai donné le nom <i>"Exercices"</i>. Le nom choisi correspond également au dossier qui va être crée du même nom. Il suffit juste de sélectionner le dossier dans laquelle la solution va être située. On peut la mettre dans un repository par exemple. Il faut maintenant cliquer sur le bouton <span class="w3-tag w3-grey">Create</span>. Un nouveau dossier apparaît au chemin qui a été donné et à l'intérieur de ce dossier, il devrait y avoir:
+    </p>
+    <ul %ul%>
+      <li>[NOM_DE_LA_SOLUTION].sln</li>
+      <li>un dossier caché appelé <cite>.vs</cite> contenant des options propres à la solution.</li>
+    </ul>
+  </div>
+  <div %div%>
+    <h2 %h2%>Création d'un projet c++</h2> 
+    <p %p%>
+      On a notre solution, maintenant il faut créer un projet à l'intérieur de cette solution. Avant de procéder, on va d'abord créer un nouveau dossier à côté de la solution appelé <i>"Sources"</i>. Exemple : 
+    </p>
+    <img %img60% src="images/05.png" />
+    <p %p%>
+      C'est dans ce dossier qu'on va ranger tous les projets. Maintenant, on retourne dans Visual Studio et on va refaire la même manipulation que pour créer une solution, c'est à dire : <span class="w3-tag w3-grey">File</span>=><span class="w3-tag w3-grey">New</span>=><span class="w3-tag w3-grey">New Project...</span>. Cette fois-ci on va créer un nouveau projet c++, on va donc taper <i>"empty project"</i> et sélectionner l'item <i>"Empty Project"</i> en faisant bien attention que ce soit un projet c++ comme indiqué dans la description de l'item. 
+    </p>
+    _include(attention,content={Si tu ne trouves pas, change le filtre <i>"All languages"</i> et sélectionne <i>"c++"</i> pour affiner la recherche. Si tu ne trouves vraiment pas, c'est peut être du à une mauvaise installation de Visual Studio, il faut bien vérifier que le pack de développement c++ a été installé dans le Visual Studio Installer.})
+    <img %img% src="images/06.png" />
+    <p %p%>
+      Une nouvelle fenêtre pop-up apparait. Dans cette fenêtre, on va tout de suite changer le champs <i>"Solution"</i> en mettant <i>"Add to solution"</i> à la place. Dans le champs en dessous, on devrait avoir normalement le nom de la solution que l'on a créé, si ce n'est pas le cas, il faut la sélectionner. Ensuite il faut indiquer le nom du projet. J'ai donnée le nom <i>"01-Hello"</i> de mon côté, <i>01</i> faisant référence au premier projet créé, çà permet de classer les projets dans l'ordre temporel de création, à toi de voir. Enfin le chemin où se situe le projet doit être indiqué dans le champs <i>"Location"</i>. Il faut donner le chemin vers le dossier <i>"Source"</i>.
+    </p> 
+    _include(attention,content={Attention, si tu changes le champs vers <i>"Add to solution"</i> après avoir rempli les autres champs, il réinitialise le champs <i>"Location"</i>, on peut se faire avoir ^^.})
+    <img %img% src="images/07.png" />
+    <p %p%>
+      Le dossier <i>"Exercices"</i> devrait maintenant contenir un sous dossier appelé <i>"01-Hello"</i> qui lui même devrait contenir 3 fichiers:
+    </p>
+    <ul %ul%>
+      <li><i>[NOM DU PROJET].vcxproj</i> => C'est là où sont indiqués les propriétés du projets (compilateur, les includes, les sources, les librairies, le options, ...</li>
+      <li><i>[NOM DU PROJET].vcxproj.filters</i> => Ce fichier définit l'arborescence du projet (comment sont rangés les fichiers). Par exemple, on peut mettre tous les fichier *.cpp dans le dossier filtre <i>"Source Files"</i> et les *.h dans le dossier filtre <i>"Include Files"</i>. Attention, l'aborescence dans l'explorateur de fichier n'est pas automatiquement le même que l'arborescence dans le projet Visual Studio.</li>
+      <li><i>[NOM DU PROJET].vcxproj.user</i> => Ce fichier ne nous intéresse pas, il est là pour des raisons de compatibilité avec les anciennes versions de Visual Studio</li>
+    </ul>
+    <p %p%>
+      Exemple chez moi:
+    </p>
+    <img %img60% src="images/08.png" />
+</div>
+<div %div%>
+    <h2 %h2%>Hello World</h2> 
+    <p %p%>
+      Il ne reste plus qu'à essayer de voir si tout marche bien. Dans Visual Studio, le nouveau projet doit apparaître dans la partie <i>"Solution Explorer"</i>.
+    </p>
+    <img %img40% src="images/10.png" />
+    <p %p%>
+      On va créer un nouveau fichier cpp pour afficher notre premier "Hello World". Il faut, pour çà, cliquer droit sur le dossier filtre <i>"Source Files"</i> et ensuite sélectionner <span class="w3-tag w3-grey">Add</span>=><span class="w3-tag w3-grey">New Item...</span>. Une nouvelle fenêtre pop-up apparaît et normalement Visual Studio devrait directement orienter le choix de l'item sur <i>"C++ File (.cpp)"</i>. Si ce n'est pas le cas, ce n'est pas bien grave puisqu'on va écrire le nom du fichier dans le champs <i>"Name"</i> en bas. Je propose d'appeler le nouveau fichier <i>"main.cpp"</i>. Alors, attention, comme je l'ai mentionné avant, l'arborescence des fichiers est différente dans la solution et dans l'explorateur de fichier, c'est pour çà que je conseille d'organiser ses fichiers de la même façon des deux côtés (presque de la même façon). Dans le champs <i>"Location"</i>, on va placer le fichier <i>"main.cpp"</i> dans <i>"Sources/01-Hello/src"</i>. <i>"src"</i> fait miroir ici avec le dossier filtre <i>"Source Files"</i>. Cliquer enfin sur <span class="w3-tag w3-grey">Add</span>.  
+    </p>
+    <img %img% src="images/11.png" />
+    <p %p%>
+      Dans ce fichier <i>"main.cpp"</i>, on va écrire le code suivant que tu dois bien connaître à force de la voir partout.
+    </p>
+    <div id='write'  class=''>
+      <pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 141px; left: 11.9219px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;iostream&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp=""></span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span><span class=""> </span><span class="cm-def">main</span><span class="">()</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="">{</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""> &nbsp; &nbsp;</span><span class="cm-variable">std::cout</span><span class=""> </span><span class="cm-operator">&lt;&lt;</span><span class=""> </span><span class="cm-string">"Hello World!"</span><span class=""> </span><span class="cm-operator">&lt;&lt;</span><span class=""> </span><span class="cm-variable">std::endl</span><span class="">;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="">}</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 156px;"></div><div class="CodeMirror-gutters" style="display: none; height: 156px;"></div></div></div></pre>
+    </div>
+      <p %p%>
+        Pour finir cette fiche, il ne reste plus qu'à lancer l'exécution du projet. Il faut cliquer sur le bouton <span class="w3-tag w3-grey">Local Windows Debugger</span> en haut. Juste après un court moment de compilation, une console apparaît et nous fait un "Hello World".
+      </p>
+    <img %img% src="images/12.png" />
+    <img %img% src="images/13.png" />
+    </div>
+  </div>
+
+_include(conclusion,content={
+  <div %div%>
+    <h2 class="w3-opacity">Résumé</h2>
+    <p %p%>
+      Tu es désormais capable de créer un premier projet Visual Studio en créant une solution, un projet et un fichier source.
+    </p>
+    <ul %ul%>
+      <li>Une solution Visual Studio est un conteneur stockant un ou plusieurs projets.</li>
+      <li>Un projet c++ Visual Studio est un conteneur contenant le source code (*.cpp, *.h, ...) et d'autres fichiers annexes. Un projet est paramétrable que ce soit pour la compilation, la nature du projet (librairie, exécutable, ...), des pre/post build, ...</li>
+      <li>Une solution/projet Visual Studio contient une arborescence différente de l'arborescence de l'explorateur de fichiers. Un dossier dans une solution Visual Studio est appélé un filtre.</li>
+    </ul>
+  </div>
+  })
+</div>
+</body>
+</html>
