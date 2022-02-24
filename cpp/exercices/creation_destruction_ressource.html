@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Pointeurs et références (partie 1)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../.internal/w3.css">
+<link rel="stylesheet" href="../../.internal/typora.css">
+<style>
+body {font-family: "Lato", sans-serif}
+</style>
+</head>
+
+<body>
+<div class="w3-content" style="max-width:2000px;margin-top:0px">
+<div class="w3-sidebar w3-opacity" style="width: 20%; margin-top:20vh">
+<a href="../../.internal/../index.html" class="w3-bar w3-green w3-left-align w3-button w3-mobile">Accueil</a>
+<a href="#Part0" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Cas simple d'une création sur la pile et sur le tas</a>
+<a href="#Part1" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Destruction explicite d'une valeur sur la pile?</a>
+<a href="#Part2" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Classe et destructeur</a>
+<a href="#Part3" class="w3-bar w3-border-bottom w3-left-align w3-button w3-mobile">Création de soldats</a>
+</div>
+
+
+<div class="w3-display-container w3-center">
+  <img src="../../cpp/fiches/images/creation_objets/img_header.jpg" style="max-width:800px; width:100%; height:60%;" >
+</div>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <h1 class="w3-wide">Pointeurs, nouveau monde</h1>
+  </div>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <div class="w3-content w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="width:100%">
+    <p><span class="w3-large">Fiches requises</span><ul class="w3-ul w3-card-4 w3-blue w3-hoverable" style="width:100%"><a href="../../cpp/fiches/creation_destruction_ressource.html" style="text-decoration: none;"><li class="w3-hover-green">Mémoire dynamique : Création et destruction d'une ressource</li></a></ul></p>
+  </div> 
+  </div>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <h2 id="Part0">Cas simple d'une création sur la pile et sur le tas</h2>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">a</span> Créer un objet <code>std::string</code> appelé <code>p_stringOnHeap</code> sur le heap ayant pour valeur <code>"hello heap"</code>. Afficher ensuite la valeur de l'adresse contenue dans <code>p_stringOnHeap</code>.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">b</span> Détruire le pointeur <code>p_stringOnHeap</code>. Est-ce que le programme se comporte bien? Réafficher la valeur de l'adresse contenue dans <code>p_stringOnHeap</code>. Est-ce la même?
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">c</span> Réutiliser le pointeur <code>p_stringOnHeap</code> pour stocker l'adresse d'un nouvel objet <code>std::string</code> sur le tas avec pour valeur <code>"Hello heap again"</code>.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">d</span> Créer une variable locale de type <code>std::string</code> appelé <code>stringOnStack</code> et qui vient stocker la valeur pointée par <code>p_stringOnHeap</code>. Afficher la chaine de caractères pointée par <code>p_stringOnHeap</code> et celle stockée dans <code>stringOnStack</code>. Est-ce que les deux valeurs sont identiques? Est-ce que ce sont les même objets en mémoire?
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">e</span> Ne pas oublier de bien détruire proprement <code>p_stringOnHeap</code>.
+    </p>
+  </div>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <h2 id="Part1">Destruction explicite d'une valeur sur la pile?</h2>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">a</span> Créer un objet <code>std::string</code> appelé <code>stringOnStack</code> sur la stack ayant pour valeur <code>"hello stack"</code>.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">b</span> Créer un pointeur sur <code>stringOnStack</code> appelé <code>p_stringOnStack</code>.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">c</span> Est-il possible de détruire l'objet pointé par <code>p_stringOnStack</code>? Vérifier si c'est possible. Que se passe-t-il?
+    </p>
+    </p>
+  </div>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <h2 id="Part2">Classe et destructeur</h2>
+    <p class="w3-justify w3-large">
+      Parfois il arrive qu'une classe contienne un objet qu'il ne peut pas détruire naturellement, par exemple le pointeur sur un autre objet. En effet, il ne va détruire que le pointeur lui-même mais pas l'objet pointé.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">a</span> Créer une classe <code>Widget</code> contenant un attribut de type <code>std::string</code> appelé <code>_name</code>. Ecrire un constructeur permettant d'initialiser cet attribut.
+    </p>
+    <p class="w3-justify w3-large">
+      On souhaite savoir quand l'objet est détruit après avoir été construit. Il existe une méthode spéciale <b>destructeur</b> qui est automatiquement exécutée lorsque l'objet est libéré de la mémoire que ce soit de la pile ou du tas. Exemple :
+    </p>
+    <div id='write'  class=''>
+      <pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 299.5px; left: 328.609px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">Foo</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text=" ">    </span><span class="cm-variable">~Foo</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="  ">    </span>{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="  ">    </span><span class="cm-tab" role="presentation" cm-text=" ">    </span><span class="cm-variable">std::cout</span> <span class="cm-operator">&lt;&lt;</span> <span class="cm-string">"Destruction de l'objet Foo"</span> <span class="cm-operator">&lt;&lt;</span> <span class="cm-variable">std::endl</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text=" ">    </span>}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">};</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp=""></span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">main</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text=" ">    </span><span class="cm-variable">Foo</span> <span class="cm-variable">foo</span>;</span></pre><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}<span class="cm-comment">// Affiche =&gt; Destruction de l'objet Foo</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 315px;"></div><div class="CodeMirror-gutters" style="display: none; height: 315px;"></div></div></div></pre>
+    </div>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">b</span> Ecrire le destructeur de la classe <code>Widget</code> et qui affiche : <code>"Destruction de l'objet Widget appelé " + _widget</code>. Dans la fonction <code>main</code>, créer un <code>Widget</code> appelé <code>widget</code>(même nom pour <code>_name</code>) sur la pile et vérifier que le message de destruction de l'objet est bien affiché à la fin de la fonction <code>main</code>. Afficher un message juste avant la fin de la fonction <code>main</code> affichant <code>"Fin de la fonction main"</code>. Observer dans quel ordre aparaissent les messages
+    </p>
+    <p class="w3-justify w3-large">
+      En c++, il est possible de créer un bloc local, où tous les objets créés à l'intérieur seront détruits à la fin du bloc. Exemple : 
+    </p>
+    <div id='write'  class=''>
+      <pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="c++"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 169px; left: 11.9219px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span><span class=""> </span><span class="cm-def">main</span><span class="">()</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="">{</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""><span class="cm-tab" role="presentation" cm-text=" ">    </span></span><span class="cm-comment">// bloc</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class=""><span class="cm-tab" role="presentation" cm-text=" ">    </span>{</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""><span class="cm-tab" role="presentation" cm-text="  ">    </span><span class="cm-tab" role="presentation" cm-text=" ">    </span></span><span class="cm-variable-3">int</span><span class=""> </span><span class="cm-variable">i</span><span class=""> </span><span class="cm-operator">=</span><span class=""> </span><span class="cm-number">0</span><span class="">;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class=""><span class="cm-tab" role="presentation" cm-text=" ">    </span>} </span><span class="cm-comment">// Destruction de la variable i</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="">}</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 184px;"></div><div class="CodeMirror-gutters" style="display: none; height: 184px;"></div></div></div></pre>
+    </div>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">c</span> Dans la fonction <code>main</code>, déplacer la création de l'objet <code>widget</code> à l'intérieur. Afficher juste avant la fin du bloc <code>"Fin du bloc"</code>. Observer maintenant l'ordre des messages et quand est-ce qu'apparaît la destruction de l'objet <code>Widget</code>.
+    </p>
+    <p class="w3-justify w3-large">
+      On souhaite maintenant vérifier quand les objets sont détruits sur la pile et sur le tas.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">d</span> Ajouter un second attribut à la classe <code>Widget</code> de type <code>Widget*</code> appelé <code>_widget</code>. Dans le constructeur, initialiser la valeur de <code>_widget</code> à <code>nullptr</code>.
+    </p>
+    <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-blue w3-pale-blue w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 16%;">
+      <img src="../../.internal/Images/notes.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle; text-align: justify">
+      <p class="w3-large" style="text-align: left;"><i><code>nullptr</code> fait référence à une adresse nulle, ce qui est très utile lorsque l'on veut initialiser un pointeur qui ne pointe vers rien.</i></p>
+    </div>
+  </div>
+</div> 
+<p></p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">e</span> Ajouter un second constructeur à la classe <code>Widget</code> prenant en entrée deux paramètres, le premier de type <code>string</code> qui permet d'initialiser <code>_name</code> et un deuxième de type <code>Widget*</code> qui permet d'initialiser <code>_widget</code>.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">f</span> Dans le bloc <code>{}</code> dans la fonction <code>main</code>, créer un nouvel objet <code>Widget*</code> sur le tas appelé <code>subWidget</code> en appelant son constructeur à un paramètre . 
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">g</span>
+      Modifier la construction de l'objet <code>widget</code> en appelant cette fois-ci le second constructeur en gardant le même nom et en envoyant <code>subWidget</code> en tant que second paramètre. Il y a donc l'objet <code>widget</code> qui contient un pointeur vers <code>subWidget</code>  via son attribute <code>_widget</code>. Que se passe t-il au niveau de la destruction des <code>Widget</code>? Est-ce qu'ils sont tous détruits? Si non, pourquoi?
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">h</span> <code>_widget</code> n'est pas détruit dans la classe <code>Widget</code>. Faire en sorte de détruire cet attribut lorsque la classe <code>Widget</code> est détruite. Indice : la solution se passe dans le destructeur!
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">h</span> Question bonus : Que se passe t-il si on initialise <code>_widget</code> via le constructeur de <code>Widget</code> non pas un pointeur sur un <code>Widget</code> créé sur le tas, mais un pointeur sur un <code>Widget</code> créé sur la pile? Expérimenter et observer.
+    </p>
+  </div>
+
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <h2 id="Part3">Création de soldats</h2>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">a</span> Créer une première classe <code>Soldier</code>, il n'est pas nécessaire de remplir cette classe pour le moment. Ensuite créer une classe appelée <code>UnitFactory</code>. Cette classe contient une méthode <code>createSoldier()</code> qui créé un objet <code>Soldier</code> sur le tas et qui retourne l'adresse de l'objet.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">b</span> Créer une classe <code>Barrack</code> qui contient deux attributs:<br/>
+      <ul class="w3-large" style="text-align: left;">
+        <li>un attribut appelé <code>_soldiers</code> de type <code>std::vector&lt;Soldier*&gt;</code></li>
+        <li>un attribut appelé <code>_factory</code> de type <code>UnitFactory*</code></li>
+      </ul>
+    </p>
+    <p class="w3-justify w3-large">
+      Créer un constructeur qui initialise <code>_factory</code> à partir d'un paramètre d'entrée. 
+    </p>
+    <div class="w3-card-2">
+  <div class="w3-container w3-leftbar w3-border-blue w3-pale-blue w3-large w3-serif" style="padding: 1%;">
+    <div class="w3-container w3-cell" style="vertical-align: middle; width: 16%;">
+      <img src="../../.internal/Images/notes.svg" alt="Question guy" class="w3-left" style="width:100%;">
+    </div>
+    <div class="w3-container w3-cell" style="vertical-align: middle; text-align: justify">
+      <p class="w3-large" style="text-align: left;"><i><code>_soldiers</code> est déjà initialisé par défaut en appelant le constructeur par défaut de <code>std::vector</code>, ce qui donne un <code>vector</code> vide.</i></p>
+    </div>
+  </div>
+</div> 
+<p></p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">c</span> Dans la classe <code>Barrack</code>, écrire une méthode <code>recruitSoldier</code> qui créé un nouvel objet <code>Soldier</code> et qui l'ajoute à l'attribut <code>_soldiers</code>. Attention de bien utiliser <code>_factory</code>.
+    </p> 
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">d</span> Créer une nouvelle classe <code>Weapon</code> avec comme attribut <code>_attackDamages</code> de type <code>int</code>. Ecrire un constructeur permettant d'initialiser <code>_attackDamages</code> à partir d'un paramètre d'entrée. Ecrire également une méthode pour récupérer la valeur de l'attribut <code>_attackDamages</code>.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">e</span> Modifier la classe <code>Soldier</code> en lui ajoutant une attribut <code>_weapon</code> de type <code>Weapon*</code>. Ajouter un constructeur à la classe <code>Soldier</code> pour initialiser <code>_weapon</code> à partir d'un paramètre d'entrée. Modifier en conséquent la méthode <code>CreateSoldier</code> de la classe <code>UnitFactory</code> en créant une arme sur le tas et en l'affectant au nouvel objet <code>Soldier</code> via son constructeur. Cette nouvelle arme doit faire des dommages de valeur 5.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">f</span> Créer une nouvelle méthode <code>CreateSuperSoldier</code> dans la factory <code>UnitFactory</code> afin de pouvoir créer un super soldat avec une arme faisant des dommages de valeur 20.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">g</span> Créer une nouvelle classe <code>FirstClassBarack</code> qui a le même comportement que la classe <code>Barrack</code> mais qui enrôle cette fois-ci des super soldats.
+    </p>
+    <p class="w3-justify w3-large">
+      <span class="w3-badge w3-green">h</span> Tous les objets ayant été créé sur le tas ne sont pas libérés de la mémoire lorsque le programme se termine, il y a une fuite de mémoire. Saurais-tu libérer la mémoire de tous ces objets correctement?
+    </p>
+  </div>
+</body>
+</html>
