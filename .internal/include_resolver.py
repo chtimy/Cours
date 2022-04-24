@@ -1,7 +1,9 @@
 from include_parser import parse_includes, parse_include
 from style_resolver import resolve_styles 
 from path_resolver import resolve_paths 
-
+import os.path 
+from os import path
+import sys
 
 def _resolve_file(content, filepath):
 
@@ -31,6 +33,9 @@ def apply_place_holders(content, place_holders):
 
 def _load_template(templateName, arguments, targetFilePath):
     templatePath = "./templates/"+templateName+".html.template"
+    if not path.exists(templatePath):
+        print("Error the template name " + templateName + " has no corresponding template file")
+        sys.exit("Program exits with errors")
     with open(templatePath, 'r') as file_object:
         filedata = file_object.read()
         filedata = _resolve_arguments(filedata, arguments) 
